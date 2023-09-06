@@ -89,4 +89,6 @@ cd path/to/directory
 exit
 mkdir
 env
+PATH
+ls -la
 ```

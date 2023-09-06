@@ -87,6 +87,37 @@ void _errputs(char *str)
 }
 
 
+/**
+ * _putsfnd - Write a string to the given file descriptor.
+ * @str: The string to print.
+ * @fd: The file descriptor to write to.
+ *
+ * This function writes the string 'str' to the specified file descriptor 'fd'.
+ * It iterates through each character of the string using a 'for' loop and
+ * accumulates the number of characters written. Returns the total number of
+ * characters written to 'fd'. If 'str' is NULL, returns 0.
+ * Return: The number of chars put
+ */
+int _putsfnd(char *str, int fd)
+{
+	int a = 0;
+
+	if (!str)
+		return (0);
+	/* Loop through each character of the string */
+	for (; *str; str++)
+	{
+		 /* Write the character to the file descriptor using _putfnd() */
+		a += _putfnd(*str, fd);
+	}
+	return (a); /* Return the total number of characters written */
+}
+
+
+
+
+
+
 
 
 

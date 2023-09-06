@@ -39,7 +39,7 @@ So, dear kindred spirits, heed the call and join us in this eloquent creation, w
 
 - The graceful handling of exit statuses, where each command's finale is met with the applause of success or the solace of failure.
 
-- The conjuring of files and directories, creation and deletion, like sorcery, bending the digital realm to your will.
+- The conjuring of files and directories, creation and deletion, like sorcery, bending the digital realm of shell to your will.
 
 
 

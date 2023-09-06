@@ -17,7 +17,19 @@
 
 
 
+/* Custom error handling cases */
 
+/* Writes a single character to the standard error */
+int _errputchar(char);
+
+/* Writes a string to the standard error */
+void _errputs(char *);
+
+/* Writes a character to a file descriptor */
+int _putfnd(char c, int fd);
+
+/* Writes a string to a file descriptor */
+int _putsfnd(char *str, int fd);
 
 
 

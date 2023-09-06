@@ -41,14 +41,53 @@ So, dear kindred spirits, heed the call and join us in this eloquent creation, w
 
 - The conjuring of files and directories, creation and deletion, like sorcery, bending the digital realm of shell to your will.
 
+## Installation
 
+In the realm of our Shell, where code whispers secrets, installation unfolds thus;
 
+- Clone our digital manuscript, a repository, like pages of an ancient scroll.
 
+```sh
+git clone https://github.com/CletsyMedia/simple_shell.git
+```
 
+## Compilation
 
+- To forge this symphony, compile with care using this spells:
 
+```sh
+cd simple_shell
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
 
+## Usage
 
+- Now, the stage is set, and the spotlight beckons, invoke the Simple Shell, breathe life into the script, with the command:
 
+```sh
+./hsh
+```
 
+## Commands
 
+As the shell awakens, you can begin your voyage, weaving commands and exploring its array of functions. The Simple Shell welcomes a spectrum of commands and features like:
+
+- External commands (ls, cd, touch, mkdir) are like stardust in the night sky.
+- Built-in commands (exit, env, setenv, unsetenv, alias) are secrets of the shell's heart.
+- Manipulate the environment (export, import, unset), like an artist with a palette.
+- Craft and conjure aliases, like incantations whispered.
+- Command execution, a dance of logic AND(&&) and logic OR(||) operators.
+- Handling exit status, an epilogue to each act.
+
+Upon entering the realm of the Simple Shell, you possess the power to invoke command prompts, much akin to the familiar landscape of a standard shell. Here, a handful of illustrative examples:
+
+```sh
+ls
+pwd
+touch Hello, Simple Shell!
+cd path/to/directory
+exit
+mkdir
+env
+cat
+```

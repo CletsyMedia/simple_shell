@@ -1,0 +1,58 @@
+.TH man 1 "21 Sept, 2023" "0.1" "simple_shell man page"
+
+.SH NAME
+.B simple_shell
+
+- Simple shell create in C to interact with a linux operating system.
+
+.SH SYNOPSIS
+ hsh [options] [file]
+
+.SH DESCRIPTION
+The term "shell" in the context of computing refers to an interactive interface that bridges users and the operating system. This software layer comprehends and carries out the instructions provided by users. Often dubbed a command interpreter, the shell serves as a conduit for users to communicate with the system, utilizing a specific syntax to interact with its functions and capabilities.
+
+.B Overview
+
+The simple shell serves as a command-line utility that parses lines of input, sourced from either a file or the terminal, and carries out the execution of various commands. Primarily initiated upon user login to the system, it encompasses a multitude of features intended to facilitate user interaction. One of its notable attributes is the uniformity of its interpretative language, catering to both interactive utilization and non-interactive scenarios such as shell scripting. This implies that users can input commands directly into the active shell or store commands in a file, which can subsequently be executed by invoking the simple shell.
+
+The simple shell provides a versatile environment where users can execute commands either interactively or through script files. It supports a wide range of standard Unix commands and utilities, allowing users to perform tasks such as file manipulation, process management, text manipulation, and more. Whether executing a single command or running complex scripts, the simple shell provides a consistent and familiar interface.
+
+.SH FEATURES
+
+**Interactive and Script Execution**: The shell supports both interactive mode, where users input commands directly, and script execution mode, where commands are read from script files for automated tasks.
+
+**Command Line Editing**: Users can navigate and edit command lines using standard keyboard shortcuts, enhancing command entry and correction.
+
+**I/O Redirection**: The shell enables users to redirect input and output streams, allowing them to process files and communicate between processes effectively.
+
+**Environment Variable Management**: Users can set, modify, and access environment variables to customize their shell environment and pass information to commands.
+
+**Pipeline Support**: The shell supports command pipelines, enabling users to connect the output of one command as the input of another, facilitating complex data processing.
+
+.SH RETURN VALUE
+The
+.B simple_shell
+returns an exit status code upon completion of a command. An exit status of 0 indicates successful execution, while non-zero values indicate errors or failure.
+
+.SH PATH
+
+The shell searches for executable commands in directories specified by the PATH environment variable. It sequentially checks each directory for the requested command.
+
+.SH OPTIONS
+.B simple_shell
+supports various command-line options that can be appended after the main command. Use the "-" symbol followed by the desired option.
+
+.SH EXAMPLE
+
+[command] [options]
+$ ls -l
+
+- Execute a script file:
+    $ simple_shell script.sh
+
+.SH BUGS
+Single space required after argument.
+
+.SH AUTHOR
+Cletus Samuel, Amanda Obi.
+

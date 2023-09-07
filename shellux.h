@@ -31,7 +31,22 @@ int _putfnd(char c, int fd);
 /* Writes a string to a file descriptor */
 int _putsfnd(char *str, int fd);
 
+/* Custom error handling2: printing */
 
+/* Removes comments from a string */
+void slice_comnts(char *);
+
+/* Prints digits */
+int prntd(int, int);
+
+/* Check error if a string of an integer can not be changed to an integer */
+int err_atoi(char *);
+
+/* Prints error messages with additional information */
+void _prnterr(inform_t *, char *);
+
+/* Changes a number to a string with specified base and case */
+char *change_num(long int, int, int);
 
 
 

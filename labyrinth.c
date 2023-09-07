@@ -151,7 +151,7 @@ void locate_comnd(inform_t *informat)
 	fork_exec_comnd(informat);
 	else if (*(informat->arg) != '\n')
 	{informat->status = 127;
-	_prnterr(informat, "commaand not found\n");
+	_prnterr(informat, "command not found\n");
 	}
 	break;
 	}

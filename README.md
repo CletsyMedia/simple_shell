@@ -53,7 +53,7 @@ git clone https://github.com/CletsyMedia/simple_shell.git
 
 ## Compilation
 
-- To forge this symphony, compile with care using this spells:
+- To weave this symphony, with lines of code we cast and compile with precision using this spells:
 
 ```sh
 cd simple_shell

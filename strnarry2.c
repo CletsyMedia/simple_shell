@@ -67,4 +67,5 @@ char *_strn_copy(char *dest, char *src)
 {
 	int a = 0;
 
+  
 }

@@ -104,3 +104,28 @@ int _chain(inform_t *informat, char *buffs, size_t *p)
 	*p = b;
 	return (1);
 }
+
+
+/**
+ * change_strn - Replaces an old string with a new string.
+ * @older: Address of a pointer to the old string.
+ * @newer: Pointer to the new string.
+ *
+ * This function replaces an existing strn, pointed to by the `older` pointer,
+ * with a new string provided by the `newer` pointer. It first deallocates the
+ * memory used by the old string using `free`, and then assigns the `newer`
+ * string to the `older` pointer, effectively replacing the old string with the
+ * new string.
+ *
+ * Return: 1 indicating successful replacement, 0 otherwise.
+ */
+int change_strn(char **older, char *newer)
+{
+	/* Free the memory occupied by the older string */
+	free(*older);
+	/* Update 'older' to point to the new string */
+	*older = newer;
+	/* Return 1 to indicate success */
+	return (1);
+}
+

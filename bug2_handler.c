@@ -47,7 +47,6 @@ end_switch:
 }
 
 
-
 /**
  * _prnterr - Prints an error message with context information.
  * @informat: Pointer to the `inform_t` struct.

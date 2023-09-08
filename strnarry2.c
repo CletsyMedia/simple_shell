@@ -63,3 +63,4 @@ void _puts(char *str)
  * Return: A pointer to the destination buffer.
  * Authors: Cletus Samuel and Amanda Obi
  */
+char *_strn_copy(char *dest, char *src)

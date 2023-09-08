@@ -79,4 +79,5 @@ char *_strn_copy(char *dest, char *src)
   dest[a] = 0;
 
 	return (dest);
+  
 }

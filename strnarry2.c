@@ -48,3 +48,18 @@ void _puts(char *str)
 		_putchar(str[a]);
 	}
 }
+
+
+/**
+ * _strn_copy - Copies a string from source to destination.
+ * @dest: The destination buffer.
+ * @src: The source string.
+ *
+ * This function copies the string pointed to by `src` (including the
+ * null-terminator) to the buffer pointed to by `dest`. It returns `dest`.
+ * If `src` and `dest` are the same, or if `src` is NULL, the function returns
+ * `dest`.
+ *
+ * Return: A pointer to the destination buffer.
+ * Authors: Cletus Samuel and Amanda Obi
+ */

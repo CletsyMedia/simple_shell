@@ -174,3 +174,51 @@ int change_aliases(inform_t *informat)
 	return (1);
 }
 
+/**
+ * change_vars - Replaces variables in the tokenized string with their values.
+ * @informat: Pointer to the `inform_t` struct.
+ *
+ * This function iterates through the tokenized command arguments in the
+ * `informat` structure and identifies variables starting with '$'. It then
+ * replaces the variables with their corresponding values. Special vars like
+ * "$?" (exit status), "$$" (process ID), and environment variables are handled
+ * appropriately.
+ *
+ * Return: 1 if variables are replaced, 0 otherwise.
+ */
+int change_vars(inform_t *informat)
+{
+	int a = 0;
+	listed_t *node;
+
+	for (a = 0; informat->argv[a]; a++)
+	{
+		if (informat->argv[a][0] != '$' || !informat->argv[a][1])
+			continue;
+
+		if (!_strn_compare(informat->argv[a], "$?"))
+		{
+			change_strn(&(informat->argv[a]),
+				strn_duplicate(change_num(informat->status, 10, 0)));
+			continue;
+		}
+		if (!_strn_compare(informat->argv[a], "$$"))
+		{
+			change_strn(&(informat->argv[a]),
+				strn_duplicate(change_num(getpid(), 10, 0)));
+			continue;
+		}
+		node = node_triggers(informat->env, &informat->argv[a][1], '=');
+		if (node)
+		{
+			change_strn(&(informat->argv[a]),
+				strn_duplicate(strn_char(node->str, '=') + 1));
+			continue;
+		}
+		change_strn(&informat->argv[a], strn_duplicate(""));
+
+	}
+	return (0);
+}
+
+

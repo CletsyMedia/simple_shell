@@ -61,4 +61,25 @@ char *_strn_concat(char *dest, char *src)
 	return (ret);
 }
 
+/**
+ * _strn_length - Calculates the length of a given string.
+ * @s: A pointer to the input string whose length needs to be calculated.
+ * Return: The length of the string as an integer.
+ *
+ * Authors: Cletus Samuel and Amanda Obi
+ */
+int _strn_length(char *s)
+{
+	int a = 0;
+	/* Handle the case of a null pointer */
+	if (!s)
+
+	return (0);
+
+	while (*s++)
+	
+	a++; /* increment the length counter */
+
+	return (a);/* Return the calculated length */
+}
 

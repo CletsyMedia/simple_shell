@@ -72,5 +72,7 @@ char *_strn_copy(char *dest, char *src)
 		return (dest);
 
 	/* Loop through source and copy characters to destination */
+  for (; src[a]; a++)
+		dest[a] = src[a];
   
 }

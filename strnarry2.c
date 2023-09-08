@@ -71,5 +71,6 @@ char *_strn_copy(char *dest, char *src)
   if (dest == src || src == 0)
 		return (dest);
 
+	/* Loop through source and copy characters to destination */
   
 }

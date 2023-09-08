@@ -68,16 +68,20 @@ char *_strn_copy(char *dest, char *src)
 	int a = 0;
 
 	/* If src and dest are the same or src is NULL, return dest */
-  if (dest == src || src == 0)
+	if (dest == src || src == 0)
 		return (dest);
 
 	/* Loop through source and copy characters to destination */
-  for (; src[a]; a++)
+	for (; src[a]; a++)
 		dest[a] = src[a];
 
 	/* Ensure the destination string is null-terminated */
-  dest[a] = 0;
+	dest[a] = 0;
 
 	return (dest);
-  
+
 }
+
+
+
+

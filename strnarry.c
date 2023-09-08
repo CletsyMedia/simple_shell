@@ -34,3 +34,31 @@ char *triggers(const char *haystack, const char *pin)
 	return ((char *)haystack);
 }
 
+/**
+ * _strn_concat - This function concatenates two strings.
+ * @dest: The destination buffer.
+ * @src: The source buffer.
+ *
+ * This function appends the char from the source buffer (@src) to the end
+ * of the destination buffer (@dest), ensuring null termination at the end.
+ * Return: A pointer to the destination buffer after concatenation.
+ */
+char *_strn_concat(char *dest, char *src)
+{
+	char *ret = dest;
+
+	/* Move to the end of the destination string */
+	for (; *dest; dest++)
+		;
+
+	/* Copy the content of the source string to the destination */
+	for (; *src; src++)
+		*dest++ = *src;
+
+	/* Null-terminate the concatenated string */
+	*dest = *src;
+
+	return (ret);
+}
+
+

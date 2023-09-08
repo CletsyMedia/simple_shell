@@ -68,5 +68,6 @@ char *_strn_copy(char *dest, char *src)
 	int a = 0;
 
 	/* If src and dest are the same or src is NULL, return dest */
-
+  if (dest == src || src == 0)
+		return (dest);
 }

@@ -51,6 +51,7 @@ int _putfnd(char c, int fd)
 	}
 	if (c != BUFFER_FLUSH)
 		buffs[a++] = c;
+		
 	return (1);
 }
 
@@ -103,6 +104,7 @@ int _putsfnd(char *str, int fd)
 		 /* Write the character to the file descriptor using _putfnd() */
 		a += _putfnd(*str, fd);
 	}
+
 	return (a); /* Return the total number of characters written */
 }
 

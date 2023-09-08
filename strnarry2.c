@@ -27,3 +27,12 @@ int _putchar(char ch)
 
 	return (1);
 }
+
+/**
+ * _puts - Print a string to the standard output.
+ * @str: The input string to be printed.
+ *
+ * This function takes an input string and prints its contents
+ * to the standard output, character by character, until a null
+ * terminator is encountered.
+ */

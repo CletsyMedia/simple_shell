@@ -48,3 +48,59 @@ size_t a, size_t len)
 	*p = b;
 }
 
+
+/**
+ * _chain - Tests if the current character in the buffer is a chain delimiter.
+ * @informat: Pointer to the `inform_t` structure.
+ * @buffs: Character buffer to be checked.
+ * @p: Address of the current position in the buffer.
+ *
+ * This function examines the current character in the buffer to determine if
+ * it is a chain delimiter ('||', '&&', or ';'). Depending on the delimiter
+ * found, it updates the 'cmd_buffs_type' field in the 'inform_t' structure.
+ *
+ * Return: 1 if a chain delimiter is found, 0 otherwise.
+ */
+int _chain(inform_t *informat, char *buffs, size_t *p)
+{
+	size_t b = *p;
+
+	switch (buffs[b])
+	{
+	case '|':
+	if (buffs[b + 1] == '|')
+	{
+	buffs[b] = 0;
+	b++;
+	informat->cmd_buffs_type = OR_COMND;
+	}
+	else
+	{
+	return (0);
+	}
+	break;
+
+	case '&':
+	if (buffs[b + 1] == '&')
+	{
+	buffs[b] = 0;
+	b++;
+	informat->cmd_buffs_type = AND_COMND;
+	}
+	else
+	{
+	return (0);
+	}
+	break;
+
+	case ';':
+	buffs[b] = (0);
+	informat->cmd_buffs_type = CHAIN_COMND;
+	break;
+
+	default:
+	return (0);
+	}
+	*p = b;
+	return (1);
+}

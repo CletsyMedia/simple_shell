@@ -77,7 +77,7 @@ int _strn_length(char *s)
 	return (0);
 
 	while (*s++)
-	
+
 	a++; /* increment the length counter */
 
 	return (a);/* Return the calculated length */
@@ -111,4 +111,40 @@ int _strn_compare(char *str1, char *str2)
 		return (*str1 < *str2 ? -1 : 1);/* Compare based on ASCII values */
 }
 
+
+
+/**
+ * strn_duplicate - Duplicates a string
+ *
+ * This function creates a duplicate of the string pointed to by `str`,
+ * including the null-terminator. It allocates memory for the duplicate
+ * string and returns a pointer to the newly created string.
+ *
+ * @str: The source string to be duplicated
+ *
+ * Return: A pointer to the duplicated string, or NULL if allocation fails
+ */
+char *strn_duplicate(const char *str)
+{
+	char *ret;
+	int len = 0;
+
+	if (str == NULL)
+
+		return (NULL);
+
+	while (*str++)
+
+		len++;
+
+	ret = malloc(sizeof(char) * (len + 1));
+
+	if (!ret)
+		return (NULL);
+
+	for (len++; len--;)
+
+		ret[len] = *--str;
+	return (ret);
+}
 

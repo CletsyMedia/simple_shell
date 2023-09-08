@@ -36,3 +36,15 @@ int _putchar(char ch)
  * to the standard output, character by character, until a null
  * terminator is encountered.
  */
+void _puts(char *str)
+{
+	int a = 0;
+
+	if (!str)
+		return;
+
+	for (; str[a] != '\0'; a++)
+	{
+		_putchar(str[a]);
+	}
+}

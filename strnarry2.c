@@ -74,7 +74,9 @@ char *_strn_copy(char *dest, char *src)
 	/* Loop through source and copy characters to destination */
   for (; src[a]; a++)
 		dest[a] = src[a];
-  
-	/* Ensure the destination string is null-terminated */
 
+	/* Ensure the destination string is null-terminated */
+  dest[a] = 0;
+
+	return (dest);
 }

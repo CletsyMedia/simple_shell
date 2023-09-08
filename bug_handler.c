@@ -51,7 +51,7 @@ int _putfnd(char c, int fd)
 	}
 	if (c != BUFFER_FLUSH)
 		buffs[a++] = c;
-		
+
 	return (1);
 }
 

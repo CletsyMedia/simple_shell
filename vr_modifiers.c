@@ -129,3 +129,48 @@ int change_strn(char **older, char *newer)
 	return (1);
 }
 
+
+
+
+/**
+ * change_aliases - Replaces a cmd with its corresponding alias if available.
+ * @informat: Pointer to the `inform_t` struct.
+ *
+ * This function searches for an alias that matches the current command in the
+ * alias list stored in the `inform_t` structure. If an alias is found, the
+ * cmd is replaced with the corresponding alias value in the tokenized string.
+ *
+ * Return: 1 if an alias is replaced, 0 if no alias found.
+ */
+int change_aliases(inform_t *informat)
+{
+	listed_t *node;/* Pointer to a listed_t structure */
+	char *p;/* Pointer to a character */
+	int a = 0;/* Counter initialized to 0 */
+
+	while (a < 10)/* Loop up to 10 times */
+	{
+	/* Find any alias stored */
+	node = node_triggers(informat->alias, informat->argv[0], '=');
+	if (node == NULL)/* If no alias is found */
+	/* Return 0 to indicate failure */
+	return (0);
+	else
+	{
+	free(informat->argv[0]); /* Free the memory of the old alias */
+	/* Find the character '=' in the alias */
+	p = strn_char(node->str, '=');
+	if (!p)/* If '=' is not found */
+	return (0);
+	p = strn_duplicate(p + 1);/* Duplicate the content after '=' */
+	if (!p)/* If duplication fails */
+	return (0);
+	/* Update argv[0] with the new alias content */
+	informat->argv[0] = p;
+	a++;/* Increment the counter */
+	}
+	}
+
+	return (1);
+}
+

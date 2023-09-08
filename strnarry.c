@@ -83,3 +83,32 @@ int _strn_length(char *s)
 	return (a);/* Return the calculated length */
 }
 
+/**
+ * _strn_compare - Compares two strings alphabetically.
+ * @str1: The first string to be compared.
+ * @str2: The second string to be compared.
+ * Return: An integer indicating the comparison result:
+ *	- Negative if str1 < str2 alphabetically.
+ *	- Positive if str1 > str2 alphabetically.
+ *	- Zero if str1 = str2 alphabetically.
+ */
+int _strn_compare(char *str1, char *str2)
+{
+	/* Iterate through each character of both strings */
+	for (; *str1 && *str2; str1++, str2++)
+	{
+		/* Compare characters of `str1` and `str2` */
+		if (*str1 != *str2)
+			/* Return the difference of ASCII values */
+			return (*str1 - *str2);
+	}
+
+	/* One or both strings have reached the null terminator */
+	if (*str1 == *str2)
+		/* Both strings are equal */
+		return (0);
+	else
+		return (*str1 < *str2 ? -1 : 1);/* Compare based on ASCII values */
+}
+
+

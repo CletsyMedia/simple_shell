@@ -187,5 +187,18 @@ char **strntok1(char *str, char d)
 }
 
 
-
+/**
+ * _this_comnd - Determines if a file is an executable command.
+ * @informat: A pointer to `inform_t` struct that stores all information.
+ * @path: Path to the file.
+ *
+ * This function checks whether the file at the given path is
+ * an executable command.
+ * It uses the `stat` function to gather information about the file's type.
+ * If the file is a regular file, the function
+ * considers it an executable command.
+ *
+ * Return: 1 if the file is an executable command, 0 otherwise.
+ * Authors: Cletus Samuel and Amanda Obi
+ */
 

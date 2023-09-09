@@ -39,3 +39,45 @@ void free_mem(char **pp)
  *
  * Return: Pointer to the reallocated memory block, or NULL on failure.
  */
+void *reallocate_mem(void *ptr, unsigned int old_mem, unsigned int new_mem)
+{
+	/* Declare a new pointer to the memory */
+	char *p;
+
+	switch (1)
+	{
+	case 0:
+	/* Allocate new memory if old pointer is NULL */
+	return (malloc(new_mem));
+
+	case 1:
+	if (new_mem == 0)
+	{
+	/* Free old memory if new size is 0 */
+	free(ptr);
+	return (NULL);
+	}
+	else if (new_mem == old_mem)
+	{
+	/* Return old pointer if sizes match */
+	return (ptr);
+	}
+	else
+	{
+	/* Allocate new memory block */
+	p = malloc(new_mem);
+	if (!p)
+	{
+	return (NULL);
+	}
+	old_mem = old_mem < new_mem ? old_mem : new_mem;
+	for (; old_mem > 0; old_mem--)
+	{
+	p[old_mem - 1] = ((char *)ptr)[old_mem - 1];
+	}
+	/* Free old memory and return new pointer */
+	free(ptr);
+	return (p);
+	}
+	}
+}

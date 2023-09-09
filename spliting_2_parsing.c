@@ -56,3 +56,11 @@ char **strntok(char *str, char *d)
 	return (s);
 }
 
+
+/**
+ * _duplicate_chars - Duplicates characters from a string within a range.
+ * @pathstr: The input string.
+ * @begin: The beginning index of the range.
+ * @end: The ending index of the range (exclusive).
+ * Return: A pointer to a new buffer containing the duplicated characters.
+ */

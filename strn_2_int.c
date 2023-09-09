@@ -53,3 +53,17 @@ int _atoi(char *s)
  * @delimeter: The string containing delimiter characters.
  * Return: 1 if the character is a delimiter, 0 if not.
  */
+int isDelimiter(char c, char *delimeter)
+{
+	/* Initialize a while loop that iterates through the delimiter string */
+	while (*delimeter)
+	{
+	/* Check if the current character in the delimiter string matches 'c' */
+		if (*delimeter++ == c)
+		{
+			/* If a match is found, return 1 (indicating 'c' is a delimiter) */
+			return (1);
+		}
+	}
+	return (0);
+}

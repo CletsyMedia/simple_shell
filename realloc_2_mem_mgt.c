@@ -111,3 +111,18 @@ char *memory_set(char *s, char b, unsigned int n)
 	/* Return the pointer to the starting memory address `s` */
 	return (s);
 }
+
+/**
+ * buffs_free - Safely frees a pointer and sets the address to NULL
+ * @ptr: Address of the pointer to be freed
+ *
+ * This function safely frees memory by checking if the input pointer is not
+ * NULL. If both the input pointer and the memory it points to are valid
+ * (not NULL), the memory is deallocated using the `free()` function,
+ * and the input pointer is set to NULL to prevent any further accidental
+ * access to the freed memory. The function returns 1 upon successful memory
+ * deallocation and pointer reset, or 0 if no action was taken due to an
+ * invalid pointer or NULL memory.
+ *
+ * Return: 1 if memory was successfully freed and pointer reset, otherwise 0.
+ */

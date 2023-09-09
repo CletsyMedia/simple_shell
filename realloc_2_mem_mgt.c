@@ -126,3 +126,21 @@ char *memory_set(char *s, char b, unsigned int n)
  *
  * Return: 1 if memory was successfully freed and pointer reset, otherwise 0.
  */
+
+int buffs_free(void **ptr)
+{
+	/* Check if ptr and *ptr are not NULL */
+	if (ptr && *ptr)
+	{
+		/* Free the buffer and set the pointer to NULL */
+		free(*ptr);
+
+		*ptr = NULL;
+		
+		return (1); /* Return success */
+	}
+	return (0); /* Return failure */
+}
+
+
+

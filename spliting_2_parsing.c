@@ -202,3 +202,23 @@ char **strntok1(char *str, char d)
  * Authors: Cletus Samuel and Amanda Obi
  */
 
+int _this_comnd(inform_t *informat, char *path)
+{
+	/* Declare a structure to store file information. */
+	struct stat store;
+	/* Suppress unused parameter warning */
+	(void)informat;
+	/* Check if the path is NULL or if calling `stat` fails */
+	if (!path || stat(path, &store))
+		return (0);
+	/* Check if the file is a regular file */
+	if (S_ISREG(store.st_mode))
+	{
+		/* File is considered an executable command */
+		return (1);
+	}
+	/* File is not an executable command */
+	return (0);
+}
+
+

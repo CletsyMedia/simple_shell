@@ -81,3 +81,14 @@ int isDelimiter(char c, char *delimeter)
  * Return: 1 if the character is alphabetic, 0 otherwise.
  */
 int isAlphabetic(int c)
+{
+	/* Check if it's an alphabetic character. */
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+
+		return (1);
+
+	/* Check if it's not an alphabetic character. */
+	else
+		return (0);
+}
+

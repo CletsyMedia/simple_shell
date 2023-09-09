@@ -133,3 +133,5 @@ char *_search_path(inform_t *informat, char *pathstr, char *comnd)
 	}
 }
 
+
+

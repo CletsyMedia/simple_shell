@@ -67,3 +67,16 @@ int isDelimiter(char c, char *delimeter)
 	}
 	return (0);
 }
+
+
+/**
+ * isAlphabetic - Checks whether a character is an alphabetic character.
+ * @c: The character to be checked.
+ *
+ * This function determines whether the input character 'c'
+ * is an alphabetic character, including both lowercase and uppercase
+ * letters ('a' to 'z' and 'A' to 'Z'). It returns 1 if the character is
+ * alphabetic and 0 otherwise.
+ *
+ * Return: 1 if the character is alphabetic, 0 otherwise.
+ */

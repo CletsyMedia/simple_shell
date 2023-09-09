@@ -64,3 +64,26 @@ char **strntok(char *str, char *d)
  * @end: The ending index of the range (exclusive).
  * Return: A pointer to a new buffer containing the duplicated characters.
  */
+char *_duplicate_chars(char *pathstr, int begin, int end)
+{
+	/* Initialize index variables for input string and buffer */
+	int a = begin;
+	int b = 0;
+	/* Declare a static buffer to store the duplicated characters */
+	static char buffs[1024];
+
+	/* Loop through the characters in the specified range [begin, end) */
+	while (a < end)
+	{
+	/* Copy characters that are not ':' to the buffer */
+	if (pathstr[a] != ':')
+	{
+	buffs[b++] = pathstr[a];
+	}
+	a++;
+	}
+	buffs[b] = 0;	/* Null-terminate the buffer to create a valid C string */
+	/* Return a pointer to the new buffer containing duplicated characters */
+	return (buffs);
+}
+

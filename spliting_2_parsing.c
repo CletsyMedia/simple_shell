@@ -56,7 +56,6 @@ char **strntok(char *str, char *d)
 	return (s);
 }
 
-
 /**
  * _duplicate_chars - Duplicates characters from a string within a range.
  * @pathstr: The input string.
@@ -95,3 +94,4 @@ char *_duplicate_chars(char *pathstr, int begin, int end)
  *
  * Return: The full path of the command if found, or NULL if not found.
  */
+

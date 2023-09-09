@@ -80,3 +80,4 @@ int isDelimiter(char c, char *delimeter)
  *
  * Return: 1 if the character is alphabetic, 0 otherwise.
  */
+int isAlphabetic(int c)

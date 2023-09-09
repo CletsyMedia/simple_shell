@@ -15,3 +15,4 @@
  * Return: A pointer to an array of strings containing separated words,
  * or NULL on failure.
  */
+char **strntok(char *str, char *d)

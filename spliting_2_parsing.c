@@ -94,4 +94,42 @@ char *_duplicate_chars(char *pathstr, int begin, int end)
  *
  * Return: The full path of the command if found, or NULL if not found.
  */
+char *_search_path(inform_t *informat, char *pathstr, char *comnd)
+{
+	char *path;
+	int current_pos = 0;
+	int a;
+
+	if (!pathstr)
+	return (NULL);
+
+	if ((_strn_length(comnd) > 2) && triggers(comnd, "./"))
+	{
+	if (_this_comnd(informat, comnd))
+	return (comnd);
+	}
+
+	for (a = 0; ; a++)
+	{
+	switch (pathstr[a])
+	{
+	case '\0':
+	case ':':
+	path = _duplicate_chars(pathstr, current_pos, a);
+	if (!*path)
+	_strn_concat(path, comnd);
+	else
+	{
+	_strn_concat(path, "/");
+	_strn_concat(path, comnd);
+	}
+	if (_this_comnd(informat, path))
+	return (path);
+	if (!pathstr[a])
+	return (NULL);
+	current_pos = a;
+	break;
+	}
+	}
+}
 

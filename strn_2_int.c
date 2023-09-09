@@ -100,3 +100,11 @@ int isAlphabetic(int c)
  *
  * Return: 1 if the shell is in interactive mode, 0 otherwise.
  */
+int active(inform_t *informat)
+{
+	/* Find out if the shell is connected(active)*/
+	return (isatty(STDIN_FILENO) && informat->readfd <= 2);
+}
+
+
+

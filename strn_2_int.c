@@ -47,4 +47,9 @@ int _atoi(char *s)
 	return (output);
 }
 
-
+/**
+ * isDelimiter - Checks if a character is a delimiter.
+ * @c: The character to check.
+ * @delimeter: The string containing delimiter characters.
+ * Return: 1 if the character is a delimiter, 0 if not.
+ */

@@ -87,3 +87,11 @@ char *_duplicate_chars(char *pathstr, int begin, int end)
 	return (buffs);
 }
 
+/**
+ * _search_path - Finds the given command in the PATH string.
+ * @informat: Pointer to the `inform_t` struct.
+ * @pathstr: The PATH string.
+ * @comnd: The command to find.
+ *
+ * Return: The full path of the command if found, or NULL if not found.
+ */

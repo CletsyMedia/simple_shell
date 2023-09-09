@@ -134,4 +134,18 @@ char *_search_path(inform_t *informat, char *pathstr, char *comnd)
 }
 
 
+/**
+ * strntok1 - Splits an input string into words using a specified delimiter.
+ * @str: The input string to be split.
+ * @d: The delimiter used to separate words.
+ *
+ * This function takes an input string and a delimiter and splits the input
+ * string into separate words based on the specified delimiter. It returns
+ * a dynamically allocated array of strings, each element representing a word.
+ * If no words are found or if memory allocation fails, it returns NULL.
+ *
+ * Return: A pointer to an array of strings containing separated words,
+ * or NULL on failure.
+ */
+
 

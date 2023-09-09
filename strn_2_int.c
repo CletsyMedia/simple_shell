@@ -92,3 +92,11 @@ int isAlphabetic(int c)
 		return (0);
 }
 
+/**
+ * active - Checks if the shell is running in interactive mode.
+ *	Determines if the shell is connected to a terminal and
+ *	if the input file descriptor is within a certain range.
+ * @informat: Pointer to the inform_t struct containing command information.
+ *
+ * Return: 1 if the shell is in interactive mode, 0 otherwise.
+ */

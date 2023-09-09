@@ -81,3 +81,33 @@ void *reallocate_mem(void *ptr, unsigned int old_mem, unsigned int new_mem)
 	}
 	}
 }
+
+
+
+
+/**
+ * memory_set - Fills a block of memory with a specified value.
+ * @s: A pointer to the memory area to be filled.
+ * @b: The byte value to be set in the memory.
+ * @n: The number of bytes to be filled.
+ *
+ * This function fills the first @n bytes of the memory area pointed to by @s
+ * with the byte value @b.
+ *
+ * Return: A pointer to the memory area @s.
+ */
+char *memory_set(char *s, char b, unsigned int n)
+{
+	unsigned int a = 0;
+
+	/* Loop through each byte of memory */
+	while (a < n)
+	{
+		/* Set the byte at address `s + a` to the value of `b` */
+		s[a] = b;
+		/* Move to the next byte */
+		a++;
+	}
+	/* Return the pointer to the starting memory address `s` */
+	return (s);
+}

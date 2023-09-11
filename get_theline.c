@@ -23,3 +23,18 @@ void sign_handlers(__attribute__((unused)) int sign_num)
 	/* Flush the buffer */
 	_putchar(BUFFER_FLUSH);
 }
+
+
+/**
+ * input_buf - Read input from the user and store it in a buffer.
+ * @informat: Pointer to an inform_t struct.
+ * @buffs: Pointer to a pointer to the input buffer.
+ * @len: Pointer to the length of the input buffer.
+ *
+ * This function reads input from the user using the `getline` or
+ * `get_the_line` function based on the `USE_GETLINE` macro. It dynamically
+ * allocates memory for the input buffer, updates the length, and processes
+ * the input.
+ *
+ * Return: The number of characters read or -1 on failure.
+ */

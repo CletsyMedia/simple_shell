@@ -160,3 +160,32 @@ int build_hstry(inform_t *informat, char *buffs, int linecount)
  * Return: A dynamically allocated string containing the history file,
  *	or NULL if memory allocation fails.
  */
+char *fetch_hstry_doc(inform_t *informat)
+{
+	char *buffs;
+	char *directory;
+
+	/* Get user's home directory */
+	directory = get_enviro(informat, "HOME=");
+
+	if (!directory)
+
+	return (NULL);
+
+	/* Allocate memory for the path */
+	buffs = malloc(sizeof(char) * (_strn_length(directory) +
+	_strn_length(HISTORY_FILE) + 2));
+
+	if (!buffs)
+	return (NULL);
+
+	/* Construct the path */
+	buffs[0] = 0;
+
+	_strn_copy(buffs, directory);
+	_strn_concat(buffs, "/");
+	_strn_concat(buffs, HISTORY_FILE);
+
+	return (buffs);
+}
+

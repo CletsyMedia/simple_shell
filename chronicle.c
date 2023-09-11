@@ -122,3 +122,23 @@ int renumb_hstry(inform_t *informat)
  *
  * Return: Always returns 0.
  */
+int build_hstry(inform_t *informat, char *buffs, int linecount)
+{
+	listed_t *node = NULL;
+
+/* Check if informat->history is not NULL */
+	if (informat->history)
+
+	node = informat->history;
+
+ /* Add a new node with the given buffer and line count to the history */
+	addNode_end(&node, buffs, linecount);
+
+/* Update informat->history if it was initially NULL */
+	if (!informat->history)
+
+	informat->history = node;
+
+	return (0);
+}
+

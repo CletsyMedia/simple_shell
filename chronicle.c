@@ -188,3 +188,22 @@ char *fetch_hstry_doc(inform_t *informat)
 
 	return (buffs);
 }
+
+/**
+ * wrt_hstry - Writes history entries to a file
+ * @informat: Pointer to the parameter inform_t struct
+ *
+ * This function writes history entries from the provided parameter struct
+ * to a file. It first obtains the path to the history file using the
+ * get_hstry_doc function. If the path cannot be obtained, the function
+ * returns -1 to indicate an error. It then opens the history file for
+ * writing, creating it if it doesn't exist or truncating it if it does.
+ * The history entries are iterated over and written to the file, with each
+ * entry followed by a newline character. After writing all entries, the
+ * function flushes the output buffer and closes the file. If any step in
+ * this process encounters an error, the function returns -1. Otherwise,
+ * it returns 1 to indicate success.
+ *
+ * Return: 1 on successful writing of history, -1 on failure.
+ */
+

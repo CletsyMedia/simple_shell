@@ -187,3 +187,27 @@ listed_t *addNode_end(listed_t **head, const char *str, int number)
 	/* Return the address of the new node */
 	return (newNode);
 }
+
+
+/**
+ * prntList_strn - Prints only the `str` element of a `listed_t` linked list.
+ * @h: Pointer to the first node.
+ *
+ * Return: Size of the list.
+ */
+size_t prntList_strn(const listed_t *h)
+{
+	size_t a = 0;
+
+	/* Iterate through the linked list */
+	for (; h; h = h->next)
+	{
+		/* Print the `str` element or "(nil)" if NULL */
+		_puts(h->str ? h->str : "(nil)");
+		
+		_puts("\n");
+		a++; /* Increment the counter */
+	}
+	return (a);
+}
+

@@ -14,3 +14,12 @@
  *
  * Return: void
  */
+void sign_handlers(__attribute__((unused)) int sign_num)
+{
+	/* Print a newline character */
+	_puts("\n");
+	/* Print a prompt */
+	_puts("$ ");
+	/* Flush the buffer */
+	_putchar(BUFFER_FLUSH);
+}

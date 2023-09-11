@@ -46,7 +46,6 @@ int del_node_idx(listed_t **head, unsigned int idx)
 }
 
 
-
 /**
  * _free_list - Frees a linked list and its strings
  * @head_ptr: A pointer to a pointer to the head of the list

@@ -136,7 +136,7 @@ int buffs_free(void **ptr)
 		free(*ptr);
 
 		*ptr = NULL;
-		
+
 		return (1); /* Return success */
 	}
 	return (0); /* Return failure */

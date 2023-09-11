@@ -86,3 +86,12 @@ void _free_list(listed_t **head_ptr)
 	*head_ptr = NULL;
 }
 
+
+/**
+ * addNode - Adds a node to the start of the list.
+ * @head: Address of pointer to head node.
+ * @str: String field of the node.
+ * @number: Node index used by history.
+ *
+ * Return: Address of the new node if successful, NULL on failure.
+ */

@@ -135,3 +135,55 @@ listed_t *addNode(listed_t **head, const char *str, int number)
 	/* Return the address of the newly added node */
 	return (new_list);
 }
+
+
+/**
+ * addNode_end - Adds a node to the end of the list.
+ * @head: Address of pointer to the head node.
+ * @str: String field of the new node.
+ * @number: Node index used by history.
+ * Return: Address of the new node if successful, NULL on failure.
+ */
+listed_t *addNode_end(listed_t **head, const char *str, int number)
+{
+	listed_t *node;
+	listed_t *newNode;
+
+	if (!head)
+		return (NULL);
+	/* Store the current head node */
+	node = *head;
+	/* Allocate memory for the new node */
+	newNode = malloc(sizeof(listed_t));
+	if (!newNode)
+		return (NULL);
+	/* Initialize the new node's memory to zero */
+	memory_set((void *)newNode, 0, sizeof(listed_t));
+	/* Set the node index used by history */
+	newNode->number = number;
+	/* Check if str is provided */
+	if (str)
+	{/* Duplicate the input string for the new node */
+		newNode->str = strn_duplicate(str);
+		if (!newNode->str)
+		{
+			free(newNode);
+			return (NULL);
+		}
+	}
+	/* If there's an existing list */
+	if (node)
+	{
+		while (node->next)/* Traverse to the end of the list */
+			node = node->next;
+		/* Attach the new node to the end of the list */
+		node->next = newNode;
+	}
+	else
+	{
+		/* If the list is empty, set the new node as the head */
+		*head = newNode;
+	}
+	/* Return the address of the new node */
+	return (newNode);
+}

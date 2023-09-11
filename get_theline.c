@@ -173,3 +173,20 @@ ssize_t read_buf(inform_t *informat, char *buffs, size_t *a)
 
 	return (i); /* Return bytes read or error code */
 }
+
+/**
+ * get_the_line - Retrieves the next line of input from STDIN
+ * @informat: Pointer to the parameter struct containing shell information
+ * @ptr: Address of a pointer to buffer, which can be preallocated or NULL
+ * @length: Size of the preallocated buffer pointed by ptr, if not NULL
+ *
+ * This function reads the next line of input from the standard input (STDIN)
+ * and processes it. It maintains a static buffer to read data from, and it
+ * searches for a newline character in the buffer to identify the end of the
+ * line. The function reallocates memory as needed to store the line. If ptr
+ * and length are provided, the function uses the provided buffer and size for
+ * reallocation. If successful, it returns the length of the read line. If
+ * there is an error or if the end of the input is reached, it returns -1.
+ *
+ * Return: Length of the read line if successful, -1 on error or end of input.
+ */

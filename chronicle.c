@@ -28,3 +28,62 @@
  *
  * Return: Number of history entries read and processed, or 0 on failure.
  */
+int read_hstry(inform_t *informat)
+{
+	struct stat st;
+	char *buffs = NULL;
+	char *filename = fetch_hstry_doc(informat);
+	int a, last = 0, linecount = 0;
+	ssize_t fd, rdlen, fsize = 0;
+
+	if (!filename)
+	return (0);
+	fd = open(filename, O_RDONLY);
+	free(filename);
+	if (fd == -1)
+		return (0);
+	if (!fstat(fd, &st))
+		fsize = st.st_size;
+	if (fsize < 2)
+		return (0);
+	buffs = malloc(sizeof(char) * (fsize + 1));
+	if (!buffs)
+		return (0);
+	rdlen = read(fd, buffs, fsize);
+	buffs[fsize] = 0;
+	if (rdlen <= 0)
+	return (free(buffs), 0);
+	close(fd);
+	for (a = 0; a < fsize; a++)
+	if (buffs[a] == '\n')
+	{
+	buffs[a] = 0;
+	build_hstry(informat, buffs + last, linecount++);
+	last = a + 1;
+	}
+	if (last != a)
+	build_hstry(informat, buffs + last, linecount++);
+	free(buffs);
+	informat->historycount = linecount;
+	while (informat->historycount-- >= HISTORY_MAX)
+	del_node_idx(&(informat->history), 0);
+	renumb_hstry(informat);
+	return (informat->historycount);
+}
+
+
+
+/**
+ * renumb_hstry - Renumbers the history linked list after changes
+ * @informat: Pointer to the structure containing potential arguments
+ *
+ * This function is responsible for renumbering the history linked list stored
+ * within the provided parameter struct. It takes the 'informat' parameter,
+ * which should point to the head of the linked list, and traverses through
+ * the list. During traversal, each node's 'number' field is updated
+ * sequentially, reflecting the new order of the history entries. After
+ * renumbering, the 'histcount' field of the parameter struct is updated with
+ * the new count of history entries.
+ *
+ * Return: The new histcount (count of history entries) after renumbering.
+ */

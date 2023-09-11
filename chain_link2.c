@@ -78,3 +78,32 @@ size_t list_len(const listed_t *h)
  * unexpected behavior due to improper memory management.
  * Return: Array of strings.
  */
+char **listTostrns(listed_t *head)
+{
+	char **strs;
+	listed_t *node = head;
+	size_t a = list_len(head), b;
+	char *str;
+
+	if (!head || !a)
+		return (NULL);
+	strs = malloc(sizeof(char *) * (a + 1));
+	if (!strs)
+		return (NULL);
+	for (a = 0; node; node = node->next, a++)
+	{
+		str = malloc(_strn_length(node->str) + 1);
+		if (!str)
+		{
+			for (b = 0; b < a; b++)
+			free(strs[b]);
+			free(strs);
+			return (NULL);
+		}
+		str = _strn_copy(str, node->str);
+		strs[a] = str;
+	}
+	strs[a] = NULL;
+	return (strs);
+}
+

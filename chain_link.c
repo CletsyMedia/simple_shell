@@ -95,3 +95,43 @@ void _free_list(listed_t **head_ptr)
  *
  * Return: Address of the new node if successful, NULL on failure.
  */
+listed_t *addNode(listed_t **head, const char *str, int number)
+{
+	listed_t *new_list;
+
+	/* Check if the head pointer is NULL */
+	if (!head)
+	return (NULL);
+
+	/* Allocate memory for the new node */
+	new_list = malloc(sizeof(listed_t));
+	if (!new_list)
+	return (NULL);
+
+	/* Initialize the new node */
+	memory_set((void *)new_list, 0, sizeof(listed_t));
+
+	/* Assign the node index */
+	new_list->number = number;
+
+	/* Duplicate the string if provided */
+	if (str)
+	{
+	new_list->str = strn_duplicate(str);
+	if (!new_list->str)
+	{
+	/* Free allocated memory if string duplication fails */
+	free(new_list);
+	return (NULL);
+	}
+	}
+
+	/* Update the next pointer to the current head */
+	new_list->next = *head;
+
+	/* Update the head pointer to point to the new node */
+	*head = new_list;
+
+	/* Return the address of the newly added node */
+	return (new_list);
+}

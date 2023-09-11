@@ -113,3 +113,30 @@ char **listTostrns(listed_t *head)
  *
  * Return: Size of the list.
  */
+size_t prnt_list(const listed_t *h)
+{
+	size_t a = 0; /* Initialize a counter for the number of nodes */
+
+	for (; h; h = h->next)
+	{
+	/* Print the node's number followed by a colon and a space */
+	_puts(change_num(h->number, 10, 0));
+	/* Print a colon */
+	_putchar(':');
+	/* Print a space*/
+	_putchar(' ');
+
+	/* Print the node's str or "(nil)" if it's NULL */
+	_puts(h->str ? h->str : "(nil)");
+
+	_puts("\n"); /* Print a newline character */
+	a++; /* Increment the counter */
+	}
+
+	return (a); /* Return the total count of nodes printed */
+}
+
+
+
+
+

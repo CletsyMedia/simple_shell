@@ -56,4 +56,17 @@ ssize_t get_node_idx(listed_t *head, listed_t *node)
  *
  * Return: Size of the list.
  */
+size_t list_len(const listed_t *h)
+{
+	size_t a = 0; /* Initialize the counter to zero */
+
+	for (; h; h = h->next)
+	{
+	/* Iterate through the linked list using a for loop */
+	a++; /* Increment the counter for each node */
+	}
+
+	return (a); /* Return the total count of nodes */
+}
+
 

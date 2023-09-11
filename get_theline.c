@@ -138,3 +138,38 @@ ssize_t get_the_input(inform_t *informat)
 	*buf_p = buffs;
 	return (i);
 }
+
+
+/**
+ * read_buf - Reads data into a buffer from a file descriptor
+ * @informat: Pointer to inform_t struct with command information
+ * @buffs: Buffer to store the read data
+ * @a: Pointer to size indicator
+ *
+ * This function reads data from the file descriptor in 'informat' into the
+ * provided 'buffer'. The size of data read is determined by the value pointed
+ * to by 'a'. If data has already been read into the buffer, the function
+ * returns 0. Otherwise, it reads up to 'READ_BUFFER_SIZE' bytes from the file
+ * descriptor, updates the 'a' value, and returns the number of bytes read.
+ *
+ * Return: Number of bytes read (positive), 0 if buffer already contains data,
+ *	or -1 on error (and sets 'errno').
+ */
+ssize_t read_buf(inform_t *informat, char *buffs, size_t *a)
+{
+	ssize_t i = 0;
+
+	if (*a)
+	{
+		return (0); /* Buffer already contains data */
+	}
+
+	i = read(informat->readfd, buffs, READ_BUFFER_SIZE); /* Read data */
+
+	if (i >= 0)
+	{
+		*a = i; /* Update size indicator */
+	}
+
+	return (i); /* Return bytes read or error code */
+}

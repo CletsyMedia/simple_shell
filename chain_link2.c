@@ -107,3 +107,9 @@ char **listTostrns(listed_t *head)
 	return (strs);
 }
 
+/**
+ * prnt_list - Prints all elements of a listed_t linked list.
+ * @h: Pointer to the first node.
+ *
+ * Return: Size of the list.
+ */

@@ -79,3 +79,19 @@ ssize_t input_buf(inform_t *informat, char **buffs, size_t *len)
 	return (i);
 }
 
+/**
+ * get_the_input - Reads a line of input, processes command chaining, and
+ * returns the length.
+ * @informat: Pointer to the inform_t struct containing command information
+ *
+ * This function retrieves a line of input from the user, manages command
+ * chaining, and updates the inform_t struct accordingly. It utilizes the
+ * input_buf() function to obtain the input line and maintains buffer pointers
+ * for tracking. The function also handles command chaining by iterating
+ * through the input buffer and invoking _chain() to identify command chain
+ * characters. After processing, it updates the buffer pointers and resets them
+ * if the end of the buffer is reached. The final length of the command is
+ * calculated and returned. If EOF is encountered, -1 is returned.
+ *
+ * Return: The length of the command line or -1 in case of EOF
+ */

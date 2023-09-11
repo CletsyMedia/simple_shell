@@ -50,4 +50,10 @@ ssize_t get_node_idx(listed_t *head, listed_t *node)
 	return (-1); /* Return -1 if the target node is not found in the list */
 }
 
+/**
+ * list_len - Determines the length of a linked list.
+ * @h: Pointer to the first node.
+ *
+ * Return: Size of the list.
+ */
 

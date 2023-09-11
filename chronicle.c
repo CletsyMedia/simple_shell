@@ -87,3 +87,38 @@ int read_hstry(inform_t *informat)
  *
  * Return: The new histcount (count of history entries) after renumbering.
  */
+int renumb_hstry(inform_t *informat)
+{
+	int a;
+
+	listed_t *node = informat->history;
+
+	for (a = 0; node; a++, node = node->next)
+	{
+	node->number = a;
+	}
+
+	return (informat->historycount = a);
+}
+
+
+
+/**
+ * build_hstry - Adds an entry to the history linked list
+ * @informat: Pointer to the structure containing potential arguments
+ * @buffs: The buffer containing the history entry
+ * @linecount: The history line count (histcount)
+ *
+ * This function appends a new history entry to the end of the linked list
+ * contained within the 'informat' parameter. It takes the history entry
+ * 'buffer' and its corresponding 'linecount' and creates a new node with this
+ * information. If the history linked list already contains nodes, the new node
+ * is added to the end of the list using the 'addNode_end' function. If the
+ * list is empty, the new node becomes the first node in the list.
+ *
+ * The function updates the 'informat->history' pointer to point to the head of
+ * the updated linked list, ensuring proper maintenance of the history entries.
+ * The return value of the function is always 0.
+ *
+ * Return: Always returns 0.
+ */

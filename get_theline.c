@@ -190,3 +190,42 @@ ssize_t read_buf(inform_t *informat, char *buffs, size_t *a)
  *
  * Return: Length of the read line if successful, -1 on error or end of input.
  */
+int get_the_line(inform_t *informat, char **ptr, size_t *length)
+{
+	static size_t a;	/* Static position indicator */
+	size_t c;	/* Temporary size variable */
+	char *new_p = NULL;	/* New pointer for reallocation */
+	char *pnl;	/* Pointer to newline character */
+	ssize_t i = 0, s = 0;	/* Size and read status variables */
+	char *p = NULL;	/* Input pointer */
+	static char buffs[READ_BUFFER_SIZE]; /* Read buffer */
+	static size_t len;	/* Length of the read buffer */
+
+	p = *ptr;	/* Set input pointer */
+	if (p && length)
+	s = *length;	/* Update length if provided */
+	if (a == len)
+	a = len = 0;	/* Reset position indicators */
+	i = read_buf(informat, buffs, &len); /* Read data */
+	if (i == -1 || (i == 0 && len == 0))
+	return (-1);	/* Check for errors */
+	pnl = strn_char(buffs + a, '\n'); /* Find newline */
+	c = pnl ? 1 + (unsigned int)(pnl - buffs) : len; /* Calculate size */
+	new_p = reallocate_mem(p, s, s ? s + c : c + 1); /* Reallocate memory */
+	if (!new_p)
+	return (p ? free(p), -1 : -1); /* Check memory allocation */
+	if (s)
+	strn_concat(new_p, buffs + a, c - a); /* Concatenate strings */
+	else
+	strn_copy(new_p, buffs + a, c - a + 1); /* Copy strings */
+	s += c - a;	/* Update size */
+	a = c;	/* Update position */
+	p = new_p;	/* Update pointer */
+	if (length)
+	*length = s;	/* Update length if provided */
+	*ptr = p;	/* Update pointer */
+
+	return (s);	/* Return the size */
+}
+
+

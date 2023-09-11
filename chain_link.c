@@ -53,3 +53,36 @@ int del_node_idx(listed_t **head, unsigned int idx)
  * This function frees all nodes of a linked list and their associated strings.
  * It also sets the head pointer to NULL to indicate an empty list.
  */
+void _free_list(listed_t **head_ptr)
+{
+	listed_t *node;	/* Pointer to the current node */
+	listed_t *nextNode;	/* Pointer to the next node */
+	listed_t *head;	/* Copy of the head pointer */
+
+	/* Check if the head pointer is NULL or points to an empty list */
+	if (!head_ptr || !*head_ptr)
+	return;
+
+	/* Store a copy of the head pointer */
+	head = *head_ptr;
+
+	/* Traverse the list and free each node and its associated string */
+	for (node = head; node;)
+	{
+	/* Store a reference to the next node */
+	nextNode = node->next;
+
+	/* Free the string inside the current node */
+	free(node->str);
+
+	/* Free the current node itself */
+	free(node);
+
+	/* Move to the next node */
+	node = nextNode;
+	}
+
+	/* Set the head pointer to NULL to indicate an empty list */
+	*head_ptr = NULL;
+}
+

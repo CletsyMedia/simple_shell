@@ -142,3 +142,21 @@ int build_hstry(inform_t *informat, char *buffs, int linecount)
 	return (0);
 }
 
+
+
+/**
+ * fetch_hstry_doc - Retrieves the path to the history file
+ * @informat: Pointer to the parameter inform_t struct
+ *
+ * This function constructs and returns the path to the history file based
+ * on the user's home directory and the provided parameter struct. It first
+ * retrieves the user's home directory using the environment variable "HOME".
+ * If the directory cannot be obtained, the function returns NULL. Otherwise,
+ * it dynamically allocates memory for the path and constructs it by
+ * concatenating the home directory with the history file's name. The resulting
+ * path is then returned as an allocated string.
+ * It's the caller's responsibility to free the allocated memory.
+ *
+ * Return: A dynamically allocated string containing the history file,
+ *	or NULL if memory allocation fails.
+ */

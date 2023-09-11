@@ -46,3 +46,11 @@ int del_node_idx(listed_t **head, unsigned int idx)
 }
 
 
+
+/**
+ * _free_list - Frees a linked list and its strings
+ * @head_ptr: A pointer to a pointer to the head of the list
+ *
+ * This function frees all nodes of a linked list and their associated strings.
+ * It also sets the head pointer to NULL to indicate an empty list.
+ */

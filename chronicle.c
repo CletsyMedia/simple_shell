@@ -188,4 +188,3 @@ char *fetch_hstry_doc(inform_t *informat)
 
 	return (buffs);
 }
-

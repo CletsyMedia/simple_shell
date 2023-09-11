@@ -69,4 +69,12 @@ size_t list_len(const listed_t *h)
 	return (a); /* Return the total count of nodes */
 }
 
-
+/**
+ * listTostrns - Returns an array of strings from the list->str field.
+ * @head: Pointer to the first node.
+ * The function aims to transform the str field of each node in a
+ * linked list into an array of strings.
+ * It's important to manage memory carefully to avoid memory leaks or
+ * unexpected behavior due to improper memory management.
+ * Return: Array of strings.
+ */

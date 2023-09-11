@@ -95,3 +95,46 @@ ssize_t input_buf(inform_t *informat, char **buffs, size_t *len)
  *
  * Return: The length of the command line or -1 in case of EOF
  */
+ssize_t get_the_input(inform_t *informat)
+{
+	ssize_t i = 0;
+	static size_t a, b, len;
+	char **buf_p = &(informat->arg), *p;
+	static char *buffs;
+
+	_putchar(BUFFER_FLUSH);
+	i = input_buf(informat, &buffs, &len);
+
+	if (i == -1) /* EOF */
+	return (-1);
+
+	if (len)
+	{
+	/* initializing a new iterator to the current buffer position */
+	b = a;
+	p = buffs + a;
+	_checkChain(informat, buffs, &b, a, len);
+
+	for (; b < len; b++)
+	{
+	if (_chain(informat, buffs, &b))
+	break;
+	}
+
+	/* Increment the past null */
+	a = b + 1;
+
+	if (a >= len)
+	{
+	/* Reset its position */
+	a = len = 0;
+	informat->cmd_buffs_type = NORM_COMND;
+	}
+
+	*buf_p = p;
+	/* Return length of the current command */
+	return (_strn_length(p));
+	}
+	*buf_p = buffs;
+	return (i);
+}

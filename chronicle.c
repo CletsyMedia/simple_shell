@@ -206,4 +206,39 @@ char *fetch_hstry_doc(inform_t *informat)
  *
  * Return: 1 on successful writing of history, -1 on failure.
  */
+int wrt_hstry(inform_t *informat)
+{
+	char *filename = fetch_hstry_doc(informat);
+	listed_t *node = NULL;
+	ssize_t fd;
+
+	if (!filename)
+	return (-1);
+
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
+	free(filename);
+
+	if (fd == -1)
+	return (-1);
+
+	for (node = informat->history; node; node = node->next)
+	{
+	if (_putsfnd(node->str, fd) == -1 || _putfnd('\n', fd) == -1)
+	{
+	close(fd);
+	return (-1);
+	}
+	}
+
+	if (_putfnd(BUFFER_FLUSH, fd) == -1)
+	{
+	close(fd);
+	return (-1);
+	}
+
+	close(fd);
+
+	return (1);
+}
+
 

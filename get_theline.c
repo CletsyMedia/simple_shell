@@ -38,3 +38,44 @@ void sign_handlers(__attribute__((unused)) int sign_num)
  *
  * Return: The number of characters read or -1 on failure.
  */
+ssize_t input_buf(inform_t *informat, char **buffs, size_t *len)
+{
+	size_t len_buffs = 0;
+	ssize_t i = 0;
+
+	/* Fill the buffer if nothing is left */
+	if (!*len)
+	{
+	free(*buffs);
+	*buffs = NULL;
+	signal(SIGINT, sign_handlers);
+
+	/* Read input using either getline or get_the_line */
+	#if USE_GETLINE
+	i = getline(buffs, &len_buffs, stdin);
+	#else
+	i = get_the_line(informat, buffs, &len_buffs);
+	#endif
+
+	if (i > 0)
+	{
+	/* Remove newline character if present */
+	if ((*buffs)[i - 1] == '\n')
+	{
+	(*buffs)[i - 1] = '\0';
+	i--;
+	}
+
+	informat->linecount_flag = 1;
+	slice_comnts(*buffs);
+
+	/* Build history and update length */
+	build_hstry(informat, *buffs, informat->historycount++);
+	*len = i;
+	informat->cmd_buffs = buffs;
+	}
+	}
+
+	return (i);
+}
+

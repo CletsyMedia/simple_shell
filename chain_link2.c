@@ -35,3 +35,19 @@ listed_t *node_triggers(listed_t *node, char *prefix, char c)
  *
  * Return: Index of the node or -1 if not found.
  */
+ssize_t get_node_idx(listed_t *head, listed_t *node)
+{
+	size_t a = 0; /* Initialize a counter to keep track of the index */
+
+	for (; head; head = head->next, a++)
+	{
+	/* Compare the current node's address with the target node's address */
+	if (head == node)
+	{
+	return (a); /* Return the index if a match is found */
+	}
+	}
+	return (-1); /* Return -1 if the target node is not found in the list */
+}
+
+

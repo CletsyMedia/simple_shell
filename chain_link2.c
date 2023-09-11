@@ -27,3 +27,11 @@ listed_t *node_triggers(listed_t *node, char *prefix, char c)
 	return (NULL); /* No match found, return NULL */
 }
 
+
+/**
+ * get_node_idx - Gets the index of a node within a linked list.
+ * @head: Pointer to the list head.
+ * @node: Pointer to the target node.
+ *
+ * Return: Index of the node or -1 if not found.
+ */

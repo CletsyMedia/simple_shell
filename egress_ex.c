@@ -59,3 +59,17 @@ char *strn_concat(char *dest, char *src, int n)
 
 	return (s);
 }
+
+/**
+ * strn_copy - Copies a string up to a specified length.
+ * @dest: The destination string to copy to.
+ * @src: The source string to copy from.
+ * @n: The maximum number of characters to copy.
+ *
+ * This function copies up to 'n' characters from the source string 'src'
+ * to the destination string 'dest'. If the source string is shorter than 'n'
+ * characters, the remaining characters in 'dest' are set to null bytes ('\0').
+ * The function returns the pointer to the modified destination string.
+ *
+ * Return: Pointer to the modified destination string 'dest'.
+ */

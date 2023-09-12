@@ -35,3 +35,27 @@ char *strn_char(char *s, char c)
  *
  * Return: Pointer to the modified destination string 'dest'.
  */
+char *strn_concat(char *dest, char *src, int n)
+{
+	int a, b;
+	char *s = dest;
+
+	 /* Find the end of the destination string */
+	for (a = 0; dest[a] != '\0'; a++)
+		;
+
+	/* Copy up to n characters from src to dest */
+	for (b = 0; src[b] != '\0' && b < n; b++)
+	{
+		/* Copy a character from src to dest */
+		dest[a] = src[b];
+		 /* Increment the destination index */
+		a++;
+	}
+	/* Ensure that dest is null-terminated if fewer than n chars are copied */
+
+	if (b < n)
+		dest[a] = '\0';
+
+	return (s);
+}

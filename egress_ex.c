@@ -1,7 +1,6 @@
 #include "shellux.h"
 
 
-
 /**
  * strn_char - Locates a character in a string up to a maximum length.
  * @s: The string to be parsed.

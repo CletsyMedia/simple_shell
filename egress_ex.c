@@ -73,3 +73,32 @@ char *strn_concat(char *dest, char *src, int n)
  *
  * Return: Pointer to the modified destination string 'dest'.
  */
+char *strn_copy(char *dest, char *src, int n)
+{
+	char *s = dest;
+	int a = 0;
+	int b;
+
+	/* Iterate through src until null terminator or n-1 characters are copied */
+
+	for (; src[a] != '\0' && a < n - 1; a++)
+	{
+	/* Copy characters from src to dest */
+		dest[a] = src[a];
+	}
+	/* Check if less than n characters were copied */
+	if (a < n)
+	{
+		 /* Copy the value of a into b */
+		b = a;
+		/* Pad dest with null terminators until n characters are reached */
+
+		for (; b < n; b++)
+		{
+			dest[b] = '\0';
+		}
+	}
+	return (s); /* Return a pointer to the start of the destination buffer */
+}
+
+

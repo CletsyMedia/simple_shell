@@ -21,3 +21,17 @@ char *strn_char(char *s, char c)
 	return (NULL);
 }
 
+
+/**
+ * strn_concat - Concatenates two strings up to a specified length.
+ * @dest: The first string to which the second string will be appended.
+ * @src: The second string to be appended.
+ * @n: The maximum number of bytes to be used from the second string.
+ *
+ * This function appends up to 'n' bytes from the source string 'src' to the
+ * end of the destination string 'dest'. It ensures that the destination
+ * string remains null-terminated. The function returns the pointer to the
+ * modified destination string.
+ *
+ * Return: Pointer to the modified destination string 'dest'.
+ */

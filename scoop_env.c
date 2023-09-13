@@ -90,3 +90,42 @@ void _clr_inform(inform_t *informat)
  * 'cmd_buf', 'env', 'history', 'alias', 'environ', and closes 'readfd' if it's
  * greater than 2. Otherwise, it only frees 'argv' and sets 'path' to NULL.
  */
+void _free_inform(inform_t *informat, int all)
+{/* Free memory allocated for 'argv' */
+	free_mem(informat->argv);
+	informat->argv = NULL;
+	informat->path = NULL;
+
+	if (all)/* If 'all' flag is true */
+	{/* If 'cmd_buffs' is not allocated */
+	if (!informat->cmd_buffs)
+	/* Free memory allocated for 'arg' */
+	free(informat->arg);
+	/* If 'env' is allocated */
+	if (informat->env)
+	 /* Free memory for 'env' linked list */
+	_free_list(&(informat->env));
+	/* If 'history' is allocated */
+	if (informat->history)
+	/* Free memory for 'history' linked list */
+	_free_list(&(informat->history));
+	 /* If 'alias' is allocated */
+	if (informat->alias)
+	 /* Free memory for 'alias' linked list */
+	_free_list(&(informat->alias));
+	/* Free memory allocated for 'environ' */
+	free_mem(informat->environ);
+	 /* Set 'environ' to NULL */
+	informat->environ = NULL;
+	/* Free memory allocated for 'cmd_buffs' array */
+	buffs_free((void **)informat->cmd_buffs);
+	/* If 'readfd' is greater than 2 */
+	if (informat->readfd > 2)
+	/* Close the file descriptor 'readfd' */
+	close(informat->readfd);
+	/* Write a character to flush the buffer */
+	_putchar(BUFFER_FLUSH);
+	}
+}
+
+

@@ -129,7 +129,6 @@ int print_alias(listed_t *node)
 
 }
 
-
 /**
  * _shaliases - Copies the alias that is in the builtin (man alias).
  * @informat: Pointer to the inform_t struct containing command information.

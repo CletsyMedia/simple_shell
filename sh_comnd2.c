@@ -86,3 +86,35 @@ int unset_alias(inform_t *informat, char *str)
 	/* Return the result of the alias removal operation (0 for success, 1 for failure). */
 	return (rem);
 }
+/**
+ * set_alias - Sets an alias to a given string.
+ * @informat: Pointer to the inform_t struct containing command information.
+ * @str: The string alias to be set.
+ *
+ * This function handles the setting of aliases in the alias linked list stored
+ * in the 'informat' structure. It first searches for the provided alias string
+ * in the alias list and removes any existing alias with the same name.
+ * Then, it adds a new node containing the alias to the end of the alias list.
+ *
+ * Return:
+ *	- 0 on success (alias set successfully).
+ *	- 1 on error (issue encountered while setting the alias).
+ */
+int set_alias(inform_t *informat, char *str)
+{
+	char *p;
+	/* Locate '=' character in the input string */
+	p = strn_char(str, '=');
+	if (!p)
+
+	return (1);/* Return failure if '=' character is not found */
+
+	if (!*++p)
+	/* Unset alias if no value is provided */
+	return (unset_alias(informat, str));
+
+	unset_alias(informat, str);/* Unset any existing alias with the same name */
+	/* Set the alias using addNode_end() */
+	return (addNode_end(&(informat->alias), str, 0) == NULL);
+}
+

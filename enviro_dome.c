@@ -34,3 +34,16 @@ int _shunsetenviro(inform_t *informat)
 	/* Return success after unsetting variables */
 	return (0);
 }
+
+
+/**
+ * _pop_enviro_list - Populates the environment linked list.
+ * @informat: Pointer to an `inform_t` structure containing potential arg.
+ *	Used to maintain a constant function prototype.
+ *
+ * This function populates the environment linked list using the existing
+ * 'environ' array. It iterates through the 'environ' array and adds each
+ * environment variable to the linked list.
+ *
+ * Return: Always 0
+ */

@@ -75,3 +75,20 @@ int _shcdr(inform_t *informat)
 	}
 	return (0);
 }
+
+
+/**
+ * _shexit - Exits the shell with a given exit status.
+	* @informat: Pointer to the inform_t struct containing command information
+ *
+ * This function is responsible for exiting the shell with a specific exit
+ * status. If a numeric argument is provided after the "exit" command, it's
+ * used as the exit status. If no argument is given, the exit status is set
+ * to -1. In case of an invalid numeric argument, the function sets the status
+ * to 2 and displays an error message. The function returns the exit status
+ * code.
+ *
+ * Return: The exit status code: -2 if no argument provided, 1 if invalid
+ * numeric argument, or -1 if no exit argument and -1 if error in converting
+ * numeric argument.
+ */

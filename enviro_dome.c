@@ -101,3 +101,17 @@ char *get_enviro(inform_t *informat, const char *name)
 	}
 	return (NULL); /* Variable not found */
 }
+
+/**
+ * _shsetenviro - Initializes a new environment var or modifies an existing
+ * one.
+ * @informat: Pointer to an `inform_t` structure containing potential arg.
+ *	Used to maintain a constant function prototype.
+ *
+ * This function either creates a new environment var or modifies the value
+ * of an existing one. It takes in the variable name and value as arguments and
+ * updates the environment accordingly.
+ *
+ * Return: Always 0
+ */
+

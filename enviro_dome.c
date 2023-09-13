@@ -86,3 +86,18 @@ int _shenviro(inform_t *informat)
  *
  * Return: The value of the environment variable, or NULL if not found.
  */
+char *get_enviro(inform_t *informat, const char *name)
+{
+	char *p;
+	listed_t *node = informat->env;
+	/* Iterate through the linked list */
+	for (; node; node = node->next)
+	{
+		/* Check for variable match */
+		p = triggers(node->str, name);
+		if (p && *p)
+		/* Return value if found */
+			return (p);
+	}
+	return (NULL); /* Variable not found */
+}

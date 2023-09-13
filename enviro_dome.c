@@ -12,3 +12,25 @@
  *
  * Return: Always 0
  */
+int _shunsetenviro(inform_t *informat)
+{
+	int a = 1;
+
+	if (informat->argc <= 1)
+	{
+		/* Print error message */
+		_errputs("Argument count is less than required.\n");
+		/* Return failure if arguments are insufficient */
+		return (1);
+	}
+
+	/* Unset each specified variable. */
+	while (a < informat->argc)
+	{
+		_unsetenviro(informat, informat->argv[a]);
+		a++;
+	}
+
+	/* Return success after unsetting variables */
+	return (0);
+}

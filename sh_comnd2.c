@@ -2,6 +2,25 @@
 
 
 /**
+ * _shhstry - Displays the command history with line numbers.
+ * @informat: Pointer to the inform_t struct containing command information.
+ *
+ * This function prints the list of executed commands in the history,
+ * each preceded by its line number. It uses the provided inform_t
+ * structure to access the history list.
+ *
+ *	Return: Always 0
+ */
+int _shhstry(inform_t *informat)
+{
+	/* Print the shell command history using prnt_list() */
+	prnt_list(informat->history);
+
+	return (0);
+}
+
+
+/**
  * unset_alias - Removes an alias from the alias list.
  * @informat: Pointer to the inform_t struct containing command information.
  * @str: The string alias to be removed.
@@ -109,23 +128,6 @@ int print_alias(listed_t *node)
 	}
 	return (1);/* Return failure if node is NULL */
 
-}
-/**
- * _shhstry - Displays the command history with line numbers.
- * @informat: Pointer to the inform_t struct containing command information.
- *
- * This function prints the list of executed commands in the history,
- * each preceded by its line number. It uses the provided inform_t
- * structure to access the history list.
- *
- *	Return: Always 0
- */
-int _shhstry(inform_t *informat)
-{
-	/* Print the shell command history using prnt_list() */
-	prnt_list(informat->history);
-
-	return (0);
 }
 
 /**

@@ -88,3 +88,16 @@ char **_getenviro(inform_t *informat)
 	/*Return the 'environ' array.*/
 	return (informat->environ);
 }
+
+/**
+ * _unsetenviro - Removes an environment variable from the list.
+ * @informat: Pointer to the inform_t struct containing command information.
+ * @var: The string representing the environment variable to remove.
+ *
+ * This function iterates through the list of environment variables stored in
+ * the inform_t structure and removes the environment variable indicated by
+ * the var parameter. The environment_changed flag is updated to reflect the
+ * change.
+ *
+ * Return: 1 if the environment variable was successfully removed, 0 otherwise.
+ */

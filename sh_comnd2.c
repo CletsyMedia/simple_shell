@@ -48,3 +48,18 @@ int _shaliases(inform_t *informat)
 
 	return (0); /* Return success */
 }
+
+
+/**
+ * unset_alias - Removes an alias from the alias list.
+ * @informat: Pointer to the inform_t struct containing command information.
+ * @str: The string alias to be removed.
+ *
+ * This function searches for the provided alias string in the alias linked
+ * list stored in the 'informat' structure. If found, it removes the
+ * corresponding node from the list. The modified alias list is then stored
+ * back in the 'informat' structure.
+ *
+ * Return: 0 on success (alias removed successfully),
+ *	- 1 on error (alias not found or encountered an issue).
+ */

@@ -55,3 +55,13 @@ void _get_inform(inform_t *informat, char **av)
 	change_vars(informat);
 	}
 }
+
+
+/**
+ * _clr_inform - Initializes an inform_t struct
+ * @informat: Pointer to the inform_t struct to be initialized
+ *
+ * This function sets the fields of the provided inform_t struct to their
+ * initial values. It initializes the 'arg', 'argv', 'path', and 'argc' fields,
+ * ensuring that the struct is properly prepared for subsequent usage.
+ */

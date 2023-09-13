@@ -63,3 +63,26 @@ int _shaliases(inform_t *informat)
  * Return: 0 on success (alias removed successfully),
  *	- 1 on error (alias not found or encountered an issue).
  */
+int unset_alias(inform_t *informat, char *str)
+{
+	char *p;
+	int rem;
+	char c;
+
+	p = strn_char(str, '=');/* Find the position of '=' in 'str'. */
+	if (!p)
+	/* If '=' is not found, return failure. */
+	return (1);
+	/* Store the character at the position of '='. */
+	c = *p;
+	/* Null-terminate 'str' at the position of '=' to get the variable name. */
+	*p = 0;
+	
+	/* Remove the alias entry associated with the variable name and store the result in 'ret'. */
+	rem = del_node_idx(&(informat->alias), get_node_idx(informat->alias,
+	node_triggers(informat->alias, str, -1)));
+	/* Restore the original character at the position of '=' in 'str'. */
+	*p = c;
+	/* Return the result of the alias removal operation (0 for success, 1 for failure). */
+	return (rem);
+}

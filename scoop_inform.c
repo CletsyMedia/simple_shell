@@ -59,3 +59,17 @@ int _setenviro(inform_t *informat, char *var, char *value)
 	return (0);/* Return success. */
 }
 
+
+
+
+/**
+ * _getenviro - Retrieves and returns a copy of the environment variables.
+ * @informat: Pointer to the inform_t struct containing command information.
+ *
+ * This function fetches a copy of the environment variables from the inform_t
+ * structure. If changes were made to the environment or if the copy hasn't
+ * been retrieved yet, it updates the stored copy using the listTostrns
+ * function.
+ *
+ * Return: A char pointer to the string array containing environment variables.
+ */

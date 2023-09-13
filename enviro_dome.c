@@ -76,3 +76,13 @@ int _shenviro(inform_t *informat)
 
 	return (0);
 }
+/**
+ * get_enviro - Get the value of an environment variable.
+ * @informat: Pointer to an `inform_t` structure containing potentialarguments.
+ *	Used to maintain a consistent function prototype.
+ * @name: The name of the environment variable to retrieve.
+ *
+ * This function retrieves the value of the specified environment variable.
+ *
+ * Return: The value of the environment variable, or NULL if not found.
+ */

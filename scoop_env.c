@@ -65,3 +65,17 @@ void _get_inform(inform_t *informat, char **av)
  * initial values. It initializes the 'arg', 'argv', 'path', and 'argc' fields,
  * ensuring that the struct is properly prepared for subsequent usage.
  */
+void _clr_inform(inform_t *informat)
+{
+	/* Set the 'arg' member of the 'inform_t' structure to NULL */
+	informat->arg = NULL;
+
+	/* Set the 'arg' member of the 'inform_t' structure to NULL */
+	informat->argv = NULL;
+
+	/* Set the 'path' member of the 'inform_t' structure to NULL */
+	informat->path = NULL;
+
+	/* Set the 'arg' member of the 'inform_t' structure to 0 */
+	informat->argc = 0;
+}

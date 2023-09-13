@@ -90,7 +90,6 @@ int set_alias(inform_t *informat, char *str)
 	return (addNode_end(&(informat->alias), str, 0) == NULL);
 }
 
-
 /**
  * print_alias - Prints an alias string.
  * @node: Pointer to the alias node containing the alias string.

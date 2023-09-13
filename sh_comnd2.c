@@ -132,4 +132,46 @@ int set_alias(inform_t *informat, char *str)
  *	- 0 on success (alias printed successfully).
  *	- 1 on error (no alias node provided).
  */
+int print_alias(listed_t *node)
+{
+	/* Pointers for '=' character and alias string */
+	char *p = NULL;
+	char *a = NULL;
+
+	if (node)
+	{
+	/* Locate '=' character in the alias */
+	p = strn_char(node->str, '=');
+	for (a = node->str; a <= p; a++)
+	/* Print alias name characters */
+	_putchar(*a);
+	/* Print opening single quote */
+	_putchar('\'');
+	/* Print alias value after '=' character */
+	_puts(p + 1);
+	/* Print closing single quote and newline */
+	_puts("'\n");
+	/* Return success */
+	return (0);
+	}
+	return (1);/* Return failure if node is NULL */
+
+}
+/**
+ * _shhstry - Displays the command history with line numbers.
+ * @informat: Pointer to the inform_t struct containing command information.
+ *
+ * This function prints the list of executed commands in the history,
+ * each preceded by its line number. It uses the provided inform_t
+ * structure to access the history list.
+ *
+ *	Return: Always 0
+ */
+int _shhstry(inform_t *informat)
+{
+	/* Print the shell command history using prnt_list() */
+	prnt_list(informat->history);
+
+	return (0);
+}
 

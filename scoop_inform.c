@@ -73,3 +73,18 @@ int _setenviro(inform_t *informat, char *var, char *value)
  *
  * Return: A char pointer to the string array containing environment variables.
  */
+char **_getenviro(inform_t *informat)
+{
+
+	if (!informat->environ || informat->env_changed)
+	{
+	/*Convert the 'env' linked list to an array of strings ('environ')*/
+	informat->environ = listTostrns(informat->env);
+
+	/* This reset the env_change flag*/
+	informat->env_changed = 0;
+
+	}
+	/*Return the 'environ' array.*/
+	return (informat->environ);
+}

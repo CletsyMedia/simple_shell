@@ -28,13 +28,13 @@ int unset_alias(inform_t *informat, char *str)
 	c = *p;
 	/* Null-terminate 'str' at the position of '=' to get the variable name. */
 	*p = 0;
-	
-	/* Remove the alias entry associated with the variable name and store the result in 'ret'. */
+
+	/* Remove the alias entry with the var name and store the result in 'ret'. */
 	rem = del_node_idx(&(informat->alias), get_node_idx(informat->alias,
 	node_triggers(informat->alias, str, -1)));
 	/* Restore the original character at the position of '=' in 'str'. */
 	*p = c;
-	/* Return the result of the alias removal operation (0 for success, 1 for failure). */
+	/* Return the result of the alias removal(0 for success, 1 for failure). */
 	return (rem);
 }
 /**

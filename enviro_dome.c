@@ -47,3 +47,15 @@ int _shunsetenviro(inform_t *informat)
  *
  * Return: Always 0
  */
+int _pop_enviro_list(inform_t *informat)
+{
+	size_t a;
+	listed_t *node = NULL;
+
+	for (a = 0; environ[a]; a++)
+	/* Add environment variables to the linked list */
+		addNode_end(&node, environ[a], 0);
+		/* Assign the linked list to the 'env' member of the inform_t structure */
+	informat->env = node;
+	return (0);
+}

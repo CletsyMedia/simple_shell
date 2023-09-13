@@ -37,6 +37,7 @@ int unset_alias(inform_t *informat, char *str)
 	/* Return the result of the alias removal(0 for success, 1 for failure). */
 	return (rem);
 }
+
 /**
  * set_alias - Sets an alias to a given string.
  * @informat: Pointer to the inform_t struct containing command information.

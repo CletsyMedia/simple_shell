@@ -59,3 +59,13 @@ int _pop_enviro_list(inform_t *informat)
 	informat->env = node;
 	return (0);
 }
+
+/**
+ * _shenviro - Print the current environment variables.
+ * @informat: Pointer to an `inform_t` structure containing potential
+ * arguments. Used to maintain a consistent function prototype.
+ *
+ * This function prints the current environment variables to the stdout.
+ *
+ * Return: Always returns 0.
+ */

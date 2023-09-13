@@ -1,21 +1,52 @@
 #include "shellux.h"
 
 /**
- * _shhelp - Displays help information for the shell
- * @informat: Pointer to the inform_t struct containing command information
+ * _shexit - Exits the shell with a given exit status.
+	* @informat: Pointer to the inform_t struct containing command information
  *
- * Return:	Always returns 0 to indicate successful execution.
+ * This function is responsible for exiting the shell with a specific exit
+ * status. If a numeric argument is provided after the "exit" command, it's
+ * used as the exit status. If no argument is given, the exit status is set
+ * to -1. In case of an invalid numeric argument, the function sets the status
+ * to 2 and displays an error message. The function returns the exit status
+ * code.
+ *
+ * Return: The exit status code: -2 if no argument provided, 1 if invalid
+ * numeric argument, or -1 if no exit argument and -1 if error in converting
+ * numeric argument.
  */
-int _shhelp(inform_t *informat)
+int _shexit(inform_t *informat)
 {
-	char **arg_arr;
+	int exit_status;
 
-	arg_arr = informat->argv;
-	/* A message indicating that help functionality is not yet implemented */
-	_puts("The 'help' command is functional, but has not been implemented.\n");
-	if (0)
-		_puts(*arg_arr);
-	return (0);
+	/* Check if an exit status is provided. */
+	if (informat->argv[1])
+	{
+	/* Convert exit status to an integer. */
+	exit_status = err_atoi(informat->argv[1]);
+
+	if (exit_status == -1)
+	{
+	/* Set status to indicate an error. */
+	informat->status = 2;
+	/* Print an error message. */
+	_prnterr(informat, "Invalid	number: ");
+	/* Print the invalid number. */
+	_errputs(informat->argv[1]);
+	/* Print a newline character. */
+	_errputchar('\n');
+	/* Return failure. */
+	return (1);
+	}
+	/* Store the exit status. */
+	informat->err_num = err_atoi(informat->argv[1]);
+
+	return (-2);/* Return success. */
+	}
+	/* No exit status provided, set error number to -1. */
+	informat->err_num = -1;
+
+	return (-2);
 }
 
 
@@ -78,51 +109,20 @@ int _shcdr(inform_t *informat)
 
 
 /**
- * _shexit - Exits the shell with a given exit status.
-	* @informat: Pointer to the inform_t struct containing command information
+ * _shhelp - Displays help information for the shell
+ * @informat: Pointer to the inform_t struct containing command information
  *
- * This function is responsible for exiting the shell with a specific exit
- * status. If a numeric argument is provided after the "exit" command, it's
- * used as the exit status. If no argument is given, the exit status is set
- * to -1. In case of an invalid numeric argument, the function sets the status
- * to 2 and displays an error message. The function returns the exit status
- * code.
- *
- * Return: The exit status code: -2 if no argument provided, 1 if invalid
- * numeric argument, or -1 if no exit argument and -1 if error in converting
- * numeric argument.
+ * Return:	Always returns 0 to indicate successful execution.
  */
-int _shexit(inform_t *informat)
+int _shhelp(inform_t *informat)
 {
-	int exit_status;
+	char **arg_arr;
 
-	/* Check if an exit status is provided. */
-	if (informat->argv[1])
-	{
-	/* Convert exit status to an integer. */
-	exit_status = err_atoi(informat->argv[1]);
-
-	if (exit_status == -1)
-	{
-	/* Set status to indicate an error. */
-	informat->status = 2;
-	/* Print an error message. */
-	_prnterr(informat, "Invalid	number: ");
-	/* Print the invalid number. */
-	_errputs(informat->argv[1]);
-	/* Print a newline character. */
-	_errputchar('\n');
-	/* Return failure. */
-	return (1);
-	}
-	/* Store the exit status. */
-	informat->err_num = err_atoi(informat->argv[1]);
-
-	return (-2);/* Return success. */
-	}
-	/* No exit status provided, set error number to -1. */
-	informat->err_num = -1;
-
-	return (-2);
+	arg_arr = informat->argv;
+	/* A message indicating that help functionality is not yet implemented */
+	_puts("The 'help' command is functional, but has not been implemented.\n");
+	if (0)
+		_puts(*arg_arr);
+	return (0);
 }
 

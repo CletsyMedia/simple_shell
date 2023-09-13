@@ -118,3 +118,18 @@ int set_alias(inform_t *informat, char *str)
 	return (addNode_end(&(informat->alias), str, 0) == NULL);
 }
 
+
+/**
+ * print_alias - Prints an alias string.
+ * @node: Pointer to the alias node containing the alias string.
+ *
+ * This function is responsible for printing an alias stored in an alias node.
+ * It extracts the alias name and its corresponding value from the node and
+ * prints them in a formatted way. The alias name is enclosed in single quotes,
+ * followed by the alias value.
+ *
+ * Return:
+ *	- 0 on success (alias printed successfully).
+ *	- 1 on error (no alias node provided).
+ */
+

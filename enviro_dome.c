@@ -114,4 +114,22 @@ char *get_enviro(inform_t *informat, const char *name)
  *
  * Return: Always 0
  */
+int _shsetenviro(inform_t *informat)
+{
+	if (informat->argc != 3)
+	{
+		/* Print error message */
+		_errputs("Argument count doesn't match the expected\n");
+
+		/* Return failure if arguments are incorrect */
+		return (1);
+	}
+	if (_setenviro(informat, informat->argv[1], informat->argv[2]))
+	/* Set variable and return success if successful */
+		return (0);
+
+	/* Return failure if setting variable fails */
+	return (1);
+}
+
 

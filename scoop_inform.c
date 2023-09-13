@@ -101,3 +101,44 @@ char **_getenviro(inform_t *informat)
  *
  * Return: 1 if the environment variable was successfully removed, 0 otherwise.
  */
+int _unsetenviro(inform_t *informat, char *var)
+{
+	char *p;
+	listed_t *node = informat->env; /* A pointer to traverse the linked list. */
+	size_t a = 0; /* Initialize an index counter. */
+
+	/* Check if the linked list or 'var' is NULL, and return 0 for NULL. */
+	if (!node || !var)
+		return (0);
+
+	/* Loop through the linked list. */
+	while (node)
+	{
+		/* Search for 'var' within the current node's string. */
+		p = triggers(node->str, var);
+		/* If 'var' is found and followed by '=', remove the node at index 'a'. */
+		if (p && *p == '=')
+		{
+			/* Remove the node at index 'a' and update 'informat->env_changed'. */
+			informat->env_changed = del_node_idx(&(informat->env), a);
+
+			/* Reset the index counter to 0. */
+			a = 0;
+
+			/* Reset 'node' to the beginning of the linked list. */
+			node = informat->env;
+
+			/* Continue checking the remaining nodes. */
+			continue;
+		}
+		/* Move to the next node in the linked list. */
+		node = node->next;
+		/* Increment the index counter. */
+		a++;
+	}
+	/* Return the value of 'informat->env_changed' */
+	return (informat->env_changed);
+}
+
+
+

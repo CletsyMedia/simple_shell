@@ -79,3 +79,14 @@ void _clr_inform(inform_t *informat)
 	/* Set the 'arg' member of the 'inform_t' structure to 0 */
 	informat->argc = 0;
 }
+/**
+ * _free_inform - Frees inform_t struct fields
+ * @informat: Pointer to the parameter to the inform_t struct
+ * @all: Flag to indicate if all fields should be freed (1: yes, 0: no)
+ *
+ * This function deallocates memory associated with various fields of the
+ * provided info_t struct 'informat'. It takes a pointer to the struct and
+ * a boolean flag 'all'. If 'all' is true, it frees additional fields including
+ * 'cmd_buf', 'env', 'history', 'alias', 'environ', and closes 'readfd' if it's
+ * greater than 2. Otherwise, it only frees 'argv' and sets 'path' to NULL.
+ */

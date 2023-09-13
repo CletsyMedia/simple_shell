@@ -69,3 +69,10 @@ int _pop_enviro_list(inform_t *informat)
  *
  * Return: Always returns 0.
  */
+int _shenviro(inform_t *informat)
+{
+	/* Print environment variables linked list */
+	prntList_strn(informat->env);
+
+	return (0);
+}

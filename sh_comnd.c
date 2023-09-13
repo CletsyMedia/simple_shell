@@ -92,3 +92,37 @@ int _shcdr(inform_t *informat)
  * numeric argument, or -1 if no exit argument and -1 if error in converting
  * numeric argument.
  */
+int _shexit(inform_t *informat)
+{
+	int exit_status;
+
+	/* Check if an exit status is provided. */
+	if (informat->argv[1])
+	{
+	/* Convert exit status to an integer. */
+	exit_status = err_atoi(informat->argv[1]);
+
+	if (exit_status == -1)
+	{
+	/* Set status to indicate an error. */
+	informat->status = 2;
+	/* Print an error message. */
+	_prnterr(informat, "Invalid	number: ");
+	/* Print the invalid number. */
+	_errputs(informat->argv[1]);
+	/* Print a newline character. */
+	_errputchar('\n');
+	/* Return failure. */
+	return (1);
+	}
+	/* Store the exit status. */
+	informat->err_num = err_atoi(informat->argv[1]);
+
+	return (-2);/* Return success. */
+	}
+	/* No exit status provided, set error number to -1. */
+	informat->err_num = -1;
+
+	return (-2);
+}
+

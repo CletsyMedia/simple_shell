@@ -204,7 +204,7 @@ size_t prntList_strn(const listed_t *h)
 	{
 		/* Print the `str` element or "(nil)" if NULL */
 		_puts(h->str ? h->str : "(nil)");
-		
+
 		_puts("\n");
 		a++; /* Increment the counter */
 	}

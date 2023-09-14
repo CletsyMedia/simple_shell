@@ -120,10 +120,13 @@ If the Simple Shell's embrace beckons you near, follow these steps, there's no n
 1. **Fork the Repository:** Start by forking the [Simple Shell repository](https://github.com/CletsyMedia/simple_shell) to your own GitHub account.
 
 2. **Clone the Fork:** Clone your forked repository to your local machine using the following command:
+
 ```sh
 git clone https://github.com/CletsyMedia/simple_shell.git
 ```
+
 3. **Create a Branch:** Create a new branch for your feature or bug fix:
+
 ```sh
 git checkout -b feature/your-feature-name
 ```
@@ -131,6 +134,7 @@ git checkout -b feature/your-feature-name
 4. **Make Changes:** Make your improvements, fixes, or additions to the codebase.
 
 5. **Commit Changes:** Commit your changes with descriptive commit messages: 
+
 ```sh
 git commit -m "Add your commit message here"
 ```

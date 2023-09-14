@@ -92,3 +92,53 @@ env
 PATH
 ls -la
 ```
+
+## Contributors
+
+This scriptorium of shell is a collaborative effort by [Cletus Samuel](https://github.com/CletsyMedia) and [Amanda Obi](https://github.com/ObiChika).
+
+## Limitations
+
+In the grand design of Simple Shell's dream, where command-line echoes gleam, amidst its grace behold uncertainties surrounds it scene:
+
+1. **Limited Feature Set:** The Simple Shell may not offer the extensive feature set of more mature shells like Bash. Advanced or niche functionalities might be missing.
+
+2. **Error Handling:** Error handling in the shell might not be as comprehensive as established shells, which could lead to unexpected behavior or error messages.
+
+3. **Compatibility:** The shell might not be compatible with all systems or platforms, potentially resulting in compatibility issues on certain operating systems.
+
+4. **Performance:** Due to its minimalist design, certain operations within the shell might exhibit slower performance compared to optimized shells.
+
+5. **Bugs and Incompleteness:** The shell might have unresolved bugs or areas where certain features are incomplete. Users should be aware that it's an ALX educational project.
+
+For every constraint we face, a chance to rise and soar, in the hands of fellow dreamers, we seek to explore. As the project evolves we welcome contributions from fellow voyagers to address these limitations.
+
+## Support
+
+If the Simple Shell's embrace beckons you near, follow these steps, there's no need to fear. Together we'll journey, in this collaborative art:
+
+1. **Fork the Repository:** Start by forking the [Simple Shell repository](https://github.com/CletsyMedia/simple_shell) to your own GitHub account.
+
+2. **Clone the Fork:** Clone your forked repository to your local machine using the following command:
+```sh
+git clone https://github.com/CletsyMedia/simple_shell.git
+```
+3. **Create a Branch:** Create a new branch for your feature or bug fix:
+```sh
+git checkout -b feature/your-feature-name
+```
+
+4. **Make Changes:** Make your improvements, fixes, or additions to the codebase.
+
+5. **Commit Changes:** Commit your changes with descriptive commit messages: 
+```sh
+git commit -m "Add your commit message here"
+```
+
+6. **Push to Your Fork:** Push your changes to your forked repository.
+
+7. **Create a Pull Request:** Go to the Simple Shell repository on GitHub and create a pull request from your forked repository's branch to our main branch. Provide a clear description of the changes you made. We will review your contribution and provide feedback. Thank you for helping make Simple Shell better!
+
+## Contact
+
+For queries, echoes, and thoughts that bloom and fuss, don't hesitate to connect, in our haven. [Cletus Samuel](https://cletsymedia.github.io/Prof-Portfolio/) and [Amanda Obi](https://github.com/ObiChika)🙏🙏🙏🙏🙏🙏🙏

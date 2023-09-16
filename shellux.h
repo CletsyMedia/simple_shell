@@ -275,6 +275,16 @@ void _clr_inform(inform_t *);
 void _free_inform(inform_t *, int);
 
 
+/* Custom scoop_environment functions */
+
+/* Unsets an environment variable */
+int _unsetenviro(inform_t *, char *);
+
+/* Retrieves the list of environment variables */
+char **_getenviro(inform_t *);
+
+/* Sets an environment variable */
+int _setenviro(inform_t *, char *, char *);
 
 
 

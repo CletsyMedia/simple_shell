@@ -197,7 +197,19 @@ char *strn_concat(char *dest, char *str, int n);
 char *strn_char(char *s, char c);
 
 
+/* strn_2_int(atoi converts a string representation of an int) */
 
+/* Checks if a character is a delimiter */
+int isDelimiter(char, char *);
+
+/* Checks if a character is alphabetic */
+int isAlphabetic(int);
+
+/* Converts a string representation of an integer to an integer */
+int _atoi(char *);
+
+/* Checks if the shell is interactive or inactive */
+int active(inform_t *);
 
 
 

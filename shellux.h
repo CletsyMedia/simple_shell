@@ -185,7 +185,16 @@ int _putchar(char ch);
 char *strn_duplicate(const char *str);
 
 
+/* Custom egress pathway (exits)	*/
 
+/* Copies a specified number of characters from one string to another */
+char *strn_copy(char *, char *, int);
+
+/* Concatenates a specified number of characters from one string to another */
+char *strn_concat(char *dest, char *str, int n);
+
+/* Appends a single character to a string and returns the result */
+char *strn_char(char *s, char c);
 
 
 

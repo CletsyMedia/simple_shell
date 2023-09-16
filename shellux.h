@@ -233,8 +233,45 @@ int _shhstry(inform_t *informat);
 int _shaliases(inform_t *informat);
 
 
+/* vr_modifiers */
+
+/* Changes command aliases */
+int change_aliases(inform_t *informat);
+
+/* Changes environment variables */
+int change_vars(inform_t *informat);
+
+/* Manages command chaining */
+int _chain(inform_t *informat, char *buffs, size_t *p);
+
+/* Checks command chaining */
+void _checkChain(inform_t *informat, char *buffs, size_t *p, size_t a, size_t len);
+
+/* Changes string value */
+int change_strn(char **older, char *newer);
 
 
+/* Custom get_theline(read a line from a file malloc & returns len) */
+
+/* Gets input from user */
+ssize_t get_the_input(inform_t *informat);
+
+/* Sets signal handlers */
+void sign_handlers(int sign_num);
+
+/* Gets input line */
+int get_the_line(inform_t *informat, char **ptr, size_t *length);
+
+
+/* Custom get information */
+/* Retrieves information from input */
+void _get_inform(inform_t *, char **);
+
+/* Clears information stored in the structure */
+void _clr_inform(inform_t *);
+
+/* Frees the allocated memory in the structure */
+void _free_inform(inform_t *, int);
 
 
 

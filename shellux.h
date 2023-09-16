@@ -90,7 +90,32 @@ char **listTostrns(listed_t *head);
 
 
 
+/* Spliting 2 Parsingall the command */
+/* Searches for a command in specified directories and returns its path */
+char *_search_path(inform_t *, char *, char *);
 
+/* Checks if a given path corresponds to an executable command */
+int _this_comnd(inform_t *, char *);
+
+/* Creates a duplicate string with a specified range of characters */
+char *_duplicate_chars(char *, int, int);
+
+
+/* Custom Chronicle(history check) */
+/* Reads history from a file and populates the history linked list */
+int read_hstry(inform_t *informat);
+
+/* Builds the history linked list with new entries */
+int build_hstry(inform_t *informat, char *buffs, int linecount);
+
+/* Renumbers the history entries */
+int renumb_hstry(inform_t *informat);
+
+/* Fetches the history document or file */
+char *fetch_hstry_doc(inform_t *informat);
+
+/* Writes the history linked list to a file */
+int wrt_hstry(inform_t *informat);
 
 
 

@@ -124,6 +124,33 @@ char *fetch_hstry_doc(inform_t *informat);
 int wrt_hstry(inform_t *informat);
 
 
+/* Memory reallocation 2 Memory mgt */
+
+/* Frees memory allocated for a buffer */
+int buffs_free(void **);
+
+/* Frees memory allocated for an array of strings */
+void free_mem(char **);
+
+/* Sets a specified number of bytes in memory with a given value */
+char *memory_set(char *, char, unsigned int);
+
+/* Reallocates memory for a given pointer with a new size */
+void *reallocate_mem(void *, unsigned int, unsigned int);
+
+
+/* my_shuxloop.c */
+/* Executes the shell loop for simple_shell */
+int _exec_hsh(inform_t *, char **);
+
+/* Searches for and handles built-in commands in the shell environment */
+int _search_builtins(inform_t *);
+
+/* Locates and executes a command using the PATH environment variable */
+void locate_comnd(inform_t *);
+
+/* Forks and executes a command using the execve system call */
+void fork_exec_comnd(inform_t *);
 
 
 

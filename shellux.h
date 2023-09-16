@@ -17,13 +17,14 @@
 
 
 
-/* Custom error handling cases */
+
+/* Custom bug handler prototypes */
 
 /* Writes a single character to the standard error */
-int _errputchar(char);
+int _errputchar(char c);
 
 /* Writes a string to the standard error */
-void _errputs(char *);
+void _errputs(char *str);
 
 /* Writes a character to a file descriptor */
 int _putfnd(char c, int fd);
@@ -31,29 +32,61 @@ int _putfnd(char c, int fd);
 /* Writes a string to a file descriptor */
 int _putsfnd(char *str, int fd);
 
-/* Custom error handling2: printing */
+
+/* Custom bug2 handler prototypes */
 
 /* Removes comments from a string */
-void slice_comnts(char *);
+void slice_comnts(char *buffs);
 
 /* Prints digits */
-int prntd(int, int);
+int prntd(int input, int fd);
 
 /* Check error if a string of an integer can not be changed to an integer */
-int err_atoi(char *);
+int err_atoi(char *s);
 
 /* Prints error messages with additional information */
-void _prnterr(inform_t *, char *);
+void _prnterr(inform_t *informat, char *estr);
 
 /* Changes a number to a string with specified base and case */
-char *change_num(long int, int, int);
+char *change_num(long int number, int base, int flags);
 
 
 
+/* Custom Chain link(LinkedList) */
+
+/* Deletes a node at a specified index */
+int del_node_idx(listed_t **, unsigned int);
+
+/* Frees the memory allocated for a linked list */
+void _free_list(listed_t **);
+
+/* Adds a node to the beginning of a linked list */
+listed_t *addNode(listed_t **, const char *, int);
+
+/* Adds a node to the end of a linked list */
+listed_t *addNode_end(listed_t **, const char *, int);
+
+/* Prints the contents of a linked list of strings */
+size_t prntList_strn(const listed_t *);
 
 
 
+/* Custom Chain link2(LinkedList) */
 
+/* Prints the contents of a linked list */
+size_t prnt_list(const listed_t *h);
+
+/* Finds a node based on triggers or starts */
+listed_t *node_triggers(listed_t *node, char *prefix, char c);
+
+/* Gets the index of a node in a linked list */
+ssize_t get_node_idx(listed_t *head, listed_t *node);
+
+/* Returns the length of a linked list */
+size_t list_len(const listed_t *h);
+
+/* Converts a linked list of strings to an array of strings */
+char **listTostrns(listed_t *head);
 
 
 

@@ -140,17 +140,18 @@ void *reallocate_mem(void *ptr, unsigned int old_mem, unsigned int new_mem);
 
 
 /* labyrinth(Iteration) */
+
 /* Executes the shell loop for simple_shell */
-int _exec_hsh(inform_t *, char **);
+int _exec_hsh(inform_t *informat, char **av);
 
 /* Searches for and handles built-in commands in the shell environment */
-int _search_builtins(inform_t *);
+int _search_builtins(inform_t *informat);
 
 /* Locates and executes a command using the PATH environment variable */
-void locate_comnd(inform_t *);
+void locate_comnd(inform_t *informat);
 
 /* Forks and executes a command using the execve system call */
-void fork_exec_comnd(inform_t *);
+void fork_exec_comnd(inform_t *informat);
 
 
 

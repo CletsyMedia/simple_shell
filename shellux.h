@@ -245,7 +245,8 @@ int change_vars(inform_t *informat);
 int _chain(inform_t *informat, char *buffs, size_t *p);
 
 /* Checks command chaining */
-void _checkChain(inform_t *informat, char *buffs, size_t *p, size_t a, size_t len);
+void _checkChain(inform_t *informat, char *buffs, size_t *p,
+size_t a, size_t len);
 
 /* Changes string value */
 int change_strn(char **older, char *newer);

@@ -92,13 +92,13 @@ char **listTostrns(listed_t *head);
 
 /* Spliting 2 Parsingall the command */
 /* Searches for a command in specified directories and returns its path */
-char *_search_path(inform_t *, char *, char *);
+char *_search_path(inform_t *, char *pathstr, char *comnd);
 
 /* Checks if a given path corresponds to an executable command */
-int _this_comnd(inform_t *, char *);
+int _this_comnd(inform_t *informat, char *path);
 
 /* Creates a duplicate string with a specified range of characters */
-char *_duplicate_chars(char *, int, int);
+char *_duplicate_chars(char *pathstr, int begin, int end);
 
 
 /* Custom Chronicle(history check) */

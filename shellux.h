@@ -263,7 +263,8 @@ void sign_handlers(int sign_num);
 int get_the_line(inform_t *informat, char **ptr, size_t *length);
 
 
-/* Custom get information */
+/* Custom scoop_information */
+
 /* Retrieves information from input */
 void _get_inform(inform_t *, char **);
 

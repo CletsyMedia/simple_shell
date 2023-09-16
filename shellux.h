@@ -287,6 +287,23 @@ char **_getenviro(inform_t *);
 int _setenviro(inform_t *, char *, char *);
 
 
+/* Custom environment_dome functions */
+
+/* Populates environment variables from the linked list */
+int _pop_enviro_list(inform_t *informat);
+
+/* Sets an environment variable */
+int _shsetenviro(inform_t *informat);
+
+/* Unsets an environment variable */
+int _shunsetenviro(inform_t *informat);
+
+/* Retrieves the value of an environment variable */
+char *get_enviro(inform_t *informat, const char *name);
+
+/* Custom shell command for handling environment variables */
+int _shenviro(inform_t *informat);
+
 
 
 

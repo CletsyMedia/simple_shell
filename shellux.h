@@ -212,6 +212,26 @@ int _atoi(char *);
 int active(inform_t *);
 
 
+/* sh_comnd built-ins cd, exit, help(usage) */
+
+/* Changes the current working directory */
+int _shcdr(inform_t *informat);
+
+/* Displays the help message */
+int _shhelp(inform_t *informat);
+
+/* Exits the shell */
+int _shexit(inform_t *informat);
+
+
+/* sh_comnd2 built-ins history and aliases(shorthnd cmds) */
+
+/* Displays the command history */
+int _shhstry(inform_t *informat);
+
+/* Manages command aliases */
+int _shaliases(inform_t *informat);
+
 
 
 

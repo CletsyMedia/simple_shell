@@ -100,6 +100,12 @@ int _this_comnd(inform_t *informat, char *path);
 /* Creates a duplicate string with a specified range of characters */
 char *_duplicate_chars(char *pathstr, int begin, int end);
 
+/* Tokenizes a string into an array of strings using a specified delimiter */
+char **strntok(char *, char *);
+
+/* Tokenizes a string into an array of strings using a single delimiter char */
+char **strntok1(char *, char);
+
 
 /* Custom Chronicle(history check) */
 /* Reads history from a file and populates the history linked list */

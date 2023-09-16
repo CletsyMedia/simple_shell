@@ -127,19 +127,19 @@ int wrt_hstry(inform_t *informat);
 /* Memory reallocation 2 Memory mgt */
 
 /* Frees memory allocated for a buffer */
-int buffs_free(void **);
+int buffs_free(void **ptr);
 
 /* Frees memory allocated for an array of strings */
-void free_mem(char **);
+void free_mem(char **pp);
 
 /* Sets a specified number of bytes in memory with a given value */
-char *memory_set(char *, char, unsigned int);
+char *memory_set(char *s, charb, unsigned int a);
 
 /* Reallocates memory for a given pointer with a new size */
-void *reallocate_mem(void *, unsigned int, unsigned int);
+void *reallocate_mem(void *ptr, unsigned int old_mem, unsigned int new_mem);
 
 
-/* my_shuxloop.c */
+/* labyrinth(Iteration) */
 /* Executes the shell loop for simple_shell */
 int _exec_hsh(inform_t *, char **);
 

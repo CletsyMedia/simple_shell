@@ -133,7 +133,7 @@ int buffs_free(void **ptr);
 void free_mem(char **pp);
 
 /* Sets a specified number of bytes in memory with a given value */
-char *memory_set(char *s, charb, unsigned int a);
+char *memory_set(char *s, char, unsigned int a);
 
 /* Reallocates memory for a given pointer with a new size */
 void *reallocate_mem(void *ptr, unsigned int old_mem, unsigned int new_mem);

@@ -155,6 +155,34 @@ void fork_exec_comnd(inform_t *informat);
 
 
 
+/* string manipulations */
+
+/* Concatenates two strings and returns the result */
+char *_strn_concat(char *dest, char *src);
+
+/* Calculates the length of a string */
+int _strn_length(char *s);
+
+/* Compares two strings and returns the difference between ASCII values */
+int _strn_compare(char *str1, char *str2);
+
+/* Checks if a string contains any character from another string */
+char *triggers(const char *haystack, const char *pin);
+
+
+/* Custom string manipulation1: Copy a substring */
+
+/* Prints a string followed by a newline to standard output */
+void _puts(char *str);
+
+/* Copies a string and returns the result */
+char *_strn_copy(char *dest, char *src);
+
+/* Writes a character to standard output and returns the character written */
+int _putchar(char ch);
+
+/* Creates a duplicate of a string and returns the new string */
+char *strn_duplicate(const char *str);
 
 
 

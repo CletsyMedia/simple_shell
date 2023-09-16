@@ -185,7 +185,7 @@ int _putchar(char ch);
 char *strn_duplicate(const char *str);
 
 
-/* Custom egress pathway (exits)	*/
+/* Custom egress(exits)	*/
 
 /* Copies a specified number of characters from one string to another */
 char *strn_copy(char *, char *, int);

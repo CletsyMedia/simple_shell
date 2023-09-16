@@ -155,7 +155,7 @@ void fork_exec_comnd(inform_t *informat);
 
 
 
-/* string manipulations */
+/* strnarry manipulations */
 
 /* Concatenates two strings and returns the result */
 char *_strn_concat(char *dest, char *src);
@@ -170,7 +170,7 @@ int _strn_compare(char *str1, char *str2);
 char *triggers(const char *haystack, const char *pin);
 
 
-/* Custom string manipulation1: Copy a substring */
+/* Custom strnarry2 manipulations: Copy a substring */
 
 /* Prints a string followed by a newline to standard output */
 void _puts(char *str);

@@ -82,15 +82,11 @@ As the shell awakens, you can begin your voyage, weaving commands and exploring 
 Upon entering the realm of the Simple Shell, you possess the power to invoke command prompts, much akin to the familiar landscape of a standard shell. Here, a handful of illustrative examples:
 
 ```sh
-ls -l
-pwd
-touch Hello, Simple Shell!
-cd path/to/directory
-exit
-mkdir
-env
-PATH
-ls -la
+$ ls -l
+$ touch Hello, Simple Shell!
+$ exit
+$ mkdir
+$ ls -la
 ```
 
 ## Contributors

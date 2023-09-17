@@ -29,6 +29,9 @@
 #define CONVERTING_UNSIGNED	2 /* Convert numbers as unsigned */
 #define CONVERTING_LOWERCASE	1 /* Convert numbers to lowercase */
 
+/* Flags for using system getline() and strtok() functions */
+#define USING_STRTOK	0	/* Set to 1 to use system strtok() function */
+#define USING_GETLINE 0	/* Set to 1 to use system getline() function */
 
 
 

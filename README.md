@@ -103,6 +103,25 @@ $ ls -l ; mkdir new_directory ; touch file.txt
 
 - Manipulate environment variables using the export, unset, and echo commands:
 
+```sh
+$ export MY_VARIABLE="Hello, Simple_Shell!"
+$ echo $MY_VARIABLE
+$ unset MY_VARIABLE
+```
+
+- Working with aliases to create shortcuts for frequently used commands:
+
+```sh
+$ alias bk="cd .."
+$ alias
+```
+
+- Navigate directories with the cd command:
+
+```sh
+$ cd path/to/directory
+```
+
 ## Contributors
 
 This scriptorium of shell is a collaborative effort by [Cletus Samuel](https://github.com/CletsyMedia) and [Amanda Obi](https://github.com/ObiChika).

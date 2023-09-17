@@ -122,6 +122,16 @@ $ alias
 $ cd path/to/directory
 ```
 
+- Execute built-in commands like exit, env, setenv, unsetenv, and alias:
+
+```sh
+$ exit
+$ env
+$ setenv VAR_NAME VAR_VALUE
+$ unsetenv VAR_NAME
+$ alias bk="cd .."
+```
+
 ## Contributors
 
 This scriptorium of shell is a collaborative effort by [Cletus Samuel](https://github.com/CletsyMedia) and [Amanda Obi](https://github.com/ObiChika).

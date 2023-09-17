@@ -93,7 +93,15 @@ $ ls -la
 
 ```sh
 $ env
+```
 
+- Use semicolons to separate multiple commands on a single line:
+
+```sh
+$ ls -l ; mkdir new_directory ; touch file.txt
+```
+
+- Manipulate environment variables using the export, unset, and echo commands:
 
 ## Contributors
 

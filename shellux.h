@@ -33,6 +33,11 @@
 #define USING_STRTOK	0	/* Set to 1 to use system strtok() function */
 #define USING_GETLINE 0	/* Set to 1 to use system getline() function */
 
+/* History file name and maximum history size */
+#define HISTORY_MAX	4096 /* Maximum number of history entries */
+#define HISTORY_FILE	".simple_shell_history" /* Name of the history file */
+
+
 
 
 /* Custom bug handler prototypes */

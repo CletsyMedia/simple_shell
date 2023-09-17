@@ -14,7 +14,16 @@
 #include <signal.h>	/* Signal handling functions */
 
 
+/* Buffer sizes for reading and writing data */
+#define WRITE_BUFFER_SIZE 1024
+#define BUFFER_FLUSH -1
+#define READ_BUFFER_SIZE 1024
 
+/* Defines constants for command chaining modes */
+#define NORM_COMND	0	/* Normal command execution */
+#define OR_COMND	1	/* Execute next command if previous command fails */
+#define AND_COMND	2	/* Execute next command if previous command succeeds */
+#define CHAIN_COMND	3	/* Chain multiple commands with sequential execution */
 
 
 

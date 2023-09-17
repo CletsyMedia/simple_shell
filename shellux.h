@@ -38,6 +38,9 @@
 #define HISTORY_FILE	".simple_shell_history" /* Name of the history file */
 
 
+/* Gateway to the realm of environment variables */
+extern char **environ;
+
 
 
 /* Custom bug handler prototypes */

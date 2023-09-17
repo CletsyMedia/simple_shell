@@ -89,6 +89,12 @@ $ mkdir
 $ ls -la
 ```
 
+- To view the current environment variables, you can use the `env` command:
+
+```sh
+$ env
+
+
 ## Contributors
 
 This scriptorium of shell is a collaborative effort by [Cletus Samuel](https://github.com/CletsyMedia) and [Amanda Obi](https://github.com/ObiChika).

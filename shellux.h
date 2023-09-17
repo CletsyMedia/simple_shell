@@ -25,6 +25,9 @@
 #define AND_COMND	2	/* Execute next command if previous command succeeds */
 #define CHAIN_COMND	3	/* Chain multiple commands with sequential execution */
 
+/* Conversion options for the convert_number() function */
+#define CONVERTING_UNSIGNED	2 /* Convert numbers as unsigned */
+#define CONVERTING_LOWERCASE	1 /* Convert numbers to lowercase */
 
 
 

@@ -41,6 +41,79 @@
 /* Gateway to the realm of environment variables */
 extern char **environ;
 
+/**
+ * struct list_strng - singly linked list
+ * @str: String data
+ * @number: Numeric value
+ * @next: Next node pointer
+ */
+typedef struct list_strng
+{
+	char *str;	/* String data in node */
+	int number;	/* Numeric value in node */
+	struct list_strng *next; /* Pointer to next node */
+} listed_t;
+
+/**
+ * struct passinform - Bundles arguments for function calls,
+ * streamlining prototype consistency with function pointers.
+ * @argc: Number of arguments.
+ * @line_count: Error count.
+ * @arg: Command arguments from getline.
+ * @argv: Array of argument strings.
+ * @path: Current command path.
+ * @environ: Array of environment variables.
+ * @env_changed: Flag indicating environment modification.
+ * @status: Return status of last command.
+ * @err_num: Error code for exit() calls.
+ * @linecount_flag: Flag to count input lines.
+ * @fname: Program filename.
+ * @env: Linked list for environment variables.
+ * @history: Linked list for command history.
+ * @alias: Linked list for command aliases.
+ * @cmd_buffs: Pointer for command chaining buffer.
+ * @cmd_buffs_type: Type of command chaining (CMD_type ||, &&, ;).
+ * @readfd: File descriptor for line input.
+ * @historycount: Count of history line numbers.
+ */
+typedef struct passinform
+{
+	int argc;
+	unsigned int line_count;
+	char *arg;
+	char **argv;
+	char *path;
+	char **environ;
+	int env_changed;
+	int status;
+	int err_num;
+	int linecount_flag;
+	char *fname;
+	listed_t *env;
+	listed_t *history;
+	listed_t *alias;
+	char **cmd_buffs;
+	int cmd_buffs_type;
+	int readfd;
+	int historycount;
+} inform_t;
+
+
+/* Initialize an inform_t structure with default values */
+#define INFORM_INIT \
+{ 0, 0, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL,	NULL, \
+	0, 0, 0 }
+
+/**
+ *struct comndinfo - Holds comndinfo(command details)
+ *@type: comndinfo command identifier
+ *@func: Associated command function
+ */
+typedef struct comndinfo
+{
+	char *type;
+	int (*func)(inform_t *);
+} comndinfo_table;
 
 
 /* Custom bug handler prototypes */

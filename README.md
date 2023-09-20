@@ -136,51 +136,51 @@ $ alias bk="cd .."
 
 ## Disclaimer
 
-In other to verify that the simple_shell is working in line with the ALX project requirement, test all edge cases by following the readme in the [TEST_SUITE](./TEST_SUITE) or follow this steps;
+As you wander through the tapestry of this digital ballet, where the language of code waltzes with the dreams of ALX, let us unveil the grace of our simple_shell in accordance with the project's sacred rhythm. To test its mettle, follow the celestial guidance within the [TEST_SUITE](./TEST_SUITE) or heed these verses;
 
-- Clone this repo into your simple_shell directory
+- Clone this repository into your simple_shell's sacred sanctuary
 
 ```sh
 git clone https://github.com/Fuzzworth/alx_test_suite.git
 ```
 
-- Move the simple_shell_project directory to your simple_shell directory, renaming as TEST_SUITE
+- As the stars align, move the 'simple_shell_project' constellation into your humble realm, renaming it as TEST_SUITE,
 
 ```sh
 mv alx_test_suite/simple_shell_project TEST_SUITE
 ```
 
-- Navigate into the TEST_SUITE directory
+- Venture forth, step into the hallowed TEST_SUITE directory, where secrets and trials await
 
 ```sh
 cd TEST_SUITE
 ```
 
-- Make them executable
+- With a touch of magic, breathe life into the scripts, making them executable.
 
 ```sh
 chmod +x checker.bash runchecker.bash
 ```
 
-- Move runchecker.bash to your simple_shell directory.
+- Assemble the instruments, relocate 'runchecker.bash' to your simple_shell's abode.
 
 ```sh
 mv runchecker.bash ../runchecker.bash
 ```
 
-- Navigate back to simple_shell.
+- Return to the realm of simple_shell you know, guided by the celestial map.
 
  ```sh
  cd ..
  ```
 
-- Remove the residual files.
+- Cast aside remnants of the past, erase the echoes of `alx_test_suite`.
 
 ```sh
 rm -rf alx_test_suite
 ```
 
-- To run the whole suite from task 1 - 16 at once.
+- To orchestrate a symphony of challenges, invoke the full suite, from task 1 to 16, in harmonious unison.
 
 ```sh
 ./runchecker.bash
@@ -192,6 +192,7 @@ rm -rf alx_test_suite
 ./runchecker.bash #
 ```
 
+With the above verses as your compass, may your voyage through the Simple Shell's challenges unfold like a lyrical dance, echoing the elegance of the code itself.
 ## Contributors
 
 This scriptorium of shell is a collaborative effort by [Cletus Samuel](https://github.com/CletsyMedia) and [Amanda Obi](https://github.com/ObiChika).

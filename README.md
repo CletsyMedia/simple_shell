@@ -134,6 +134,64 @@ $ unsetenv VAR_NAME
 $ alias bk="cd .."
 ```
 
+## Disclaimer
+
+In other to verify that the simple_shell is working in line with the ALX project requirement, test all edge cases by following the readme in the [TEST_SUITE](./TEST_SUITE) or follow this steps;
+
+- Clone this repo into your simple_shell directory
+
+```sh
+git clone https://github.com/Fuzzworth/alx_test_suite.git
+```
+
+- Move the simple_shell_project directory to your simple_shell directory, renaming as TEST_SUITE
+
+```sh
+mv alx_test_suite/simple_shell_project TEST_SUITE
+```
+
+- Navigate into the TEST_SUITE directory
+
+```sh
+cd TEST_SUITE
+```
+
+- Make them executable
+
+```sh
+chmod +x checker.bash runchecker.bash
+```
+
+- Move runchecker.bash to your simple_shell directory.
+
+```sh
+mv runchecker.bash ../runchecker.bash
+```
+
+- Navigate back to simple_shell.
+
+ ```sh
+ cd ..
+ ```
+
+- Remove the residual files.
+
+```sh
+rm -rf alx_test_suite
+```
+
+- To run the whole suite from task 1 - 16 at once.
+
+```sh
+./runchecker.bash
+```
+
+- To run a specific suite from any task, replace the `#` with the task number of choice, e.g. to check task 5 only, do `./runchecker.bash 5`
+
+```sh
+./runchecker.bash #
+```
+
 ## Contributors
 
 This scriptorium of shell is a collaborative effort by [Cletus Samuel](https://github.com/CletsyMedia) and [Amanda Obi](https://github.com/ObiChika).
